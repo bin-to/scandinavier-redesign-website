@@ -1,0 +1,24 @@
+:root {
+  --paper: #f4f1ec;
+  --snow: #fbfbfa;
+  --white: #ffffff;
+  --ink: #1a1c1b;
+  --ink-2: #3c403e;
+  --muted: #6b706e;
+  --line: rgba(26, 28, 27, 0.1);
+  --line-strong: rgba(26, 28, 27, 0.18);
+  --teal: #039a9a;
+  --teal-deep: #027272;
+  --teal-soft: #e5f4f4;
+  --datev: #8dc63f;
+  --datev-deep: #6fb52c;
+  --scan-red: #d01212;
+  --radius: 4px;
+  --radius-md: 8px;
+  --header-h: 72px;
+  --max: 1160px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --font: "Outfit", system-ui, sans-serif;
+  --serif: "Source Serif 4", Georgia, serif;
+  --size-scale: 0.52;
+}
