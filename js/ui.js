@@ -2,7 +2,7 @@
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".nav");
-  const form = document.querySelector("#contact-form");
+  const contactForms = document.querySelectorAll(".contact-form");
   const modal = document.querySelector(".modal");
   const modalFrame = document.querySelector(".modal iframe");
 
@@ -19,14 +19,42 @@
     link.addEventListener("click", () => nav.classList.remove("is-open"));
   });
 
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const consent = form.querySelector("#consent");
-    if (consent && !consent.checked) {
-      consent.focus();
-      return;
-    }
-    form.classList.add("is-sent");
+  document.querySelectorAll("[data-topic-picker]").forEach((picker) => {
+    const field = picker.querySelector("[data-topic-field]");
+    const options = [...picker.querySelectorAll(".topic-option")];
+
+    const select = (btn) => {
+      options.forEach((option) => {
+        const active = option === btn;
+        option.classList.toggle("is-active", active);
+        option.setAttribute("aria-checked", String(active));
+      });
+      if (field) field.value = btn.dataset.topicValue || "";
+    };
+
+    options.forEach((btn, index) => {
+      btn.addEventListener("click", () => select(btn));
+      btn.addEventListener("keydown", (event) => {
+        if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(event.key)) return;
+        event.preventDefault();
+        const delta = event.key === "ArrowLeft" || event.key === "ArrowUp" ? -1 : 1;
+        const next = options[(index + delta + options.length) % options.length];
+        next.focus();
+        select(next);
+      });
+    });
+  });
+
+  contactForms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const consent = form.querySelector("[data-consent]");
+      if (consent && !consent.checked) {
+        consent.focus();
+        return;
+      }
+      form.classList.add("is-sent");
+    });
   });
 
   function closeModal() {

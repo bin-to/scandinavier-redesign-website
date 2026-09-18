@@ -1,0 +1,10 @@
+<!-- Anliegen-Auswahl (css/components.css + js/ui.js) -->
+<div class="topic-picker" data-topic-picker>
+  <span class="topic-picker-label" id="THEMA_ID-label">Anliegen</span>
+  <div class="topic-picker-track" role="radiogroup" aria-labelledby="THEMA_ID-label">
+    <button type="button" class="topic-option is-active" role="radio" aria-checked="true" data-topic-value="Beratung">Beratung</button>
+    <button type="button" class="topic-option" role="radio" aria-checked="false" data-topic-value="Modellvergleich">Modellvergleich</button>
+    <button type="button" class="topic-option" role="radio" aria-checked="false" data-topic-value="Support">Support</button>
+  </div>
+  <input type="hidden" name="thema" id="THEMA_ID" value="Beratung" data-topic-field>
+</div>

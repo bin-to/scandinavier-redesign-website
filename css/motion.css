@@ -1,0 +1,135 @@
+/* Site-wide motion: scroll reveals + subtle hovers */
+
+[data-animate] {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s var(--ease);
+  transition-delay: var(--motion-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-animate="fade-in"] {
+  transform: none;
+}
+
+[data-animate="fade-right"] {
+  transform: translate3d(-14px, 0, 0);
+}
+
+[data-animate].is-inview {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+.is-inview .eyebrow::before {
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: eyebrow-grow 0.65s var(--ease) forwards;
+  animation-delay: calc(var(--motion-delay, 0ms) + 80ms);
+}
+
+@keyframes eyebrow-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Interactive surfaces */
+@media (hover: hover) {
+  .step,
+  .tile,
+  .model,
+  .audience,
+  .scanner-card,
+  .part-card,
+  .page-hero-tile,
+  .support-quick-card,
+  .guide-link,
+  .ceo-card {
+    transition:
+      transform 0.35s var(--ease),
+      box-shadow 0.35s var(--ease),
+      border-color 0.25s;
+  }
+
+  .step:hover,
+  .tile:hover,
+  .model:hover,
+  .audience:hover,
+  .scanner-card:hover,
+  .part-card:hover,
+  .page-hero-tile:hover,
+  .support-quick-card:hover,
+  .guide-link:hover,
+  .ceo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(26, 28, 27, 0.07);
+  }
+
+  .nordic-sign {
+    transition: transform 0.5s var(--ease);
+  }
+
+  .nordic:hover .nordic-sign {
+    transform: rotate(-2deg) scale(1.02);
+  }
+}
+
+.faq-item {
+  transition: border-color 0.25s var(--ease);
+}
+
+.faq-item[open] {
+  border-color: color-mix(in srgb, var(--teal) 35%, var(--line));
+}
+
+.modal.is-open .modal-inner {
+  animation: modal-in 0.45s var(--ease) both;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .is-inview .eyebrow::before {
+    animation: none;
+    transform: none;
+  }
+
+  .step:hover,
+  .tile:hover,
+  .model:hover,
+  .audience:hover,
+  .scanner-card:hover,
+  .part-card:hover,
+  .page-hero-tile:hover,
+  .support-quick-card:hover,
+  .guide-link:hover,
+  .ceo-card:hover,
+  .nordic:hover .nordic-sign {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .modal.is-open .modal-inner {
+    animation: none;
+  }
+}

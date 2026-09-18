@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCANDINAVIER bestellen – Bestellformular</title>
+  <meta name="description" content="SCANDINAVIER Scanner online bestellen: kanzlei, next, comfort A355 Pro oder classic – inkl. DATEV-Schnittstellen und Zubehör.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/order.css">
+  <link rel="icon" href="media/homepage/logos/scandinavier-wordmark.png">
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+  <scandi-site-header
+    active="bestellen"
+    cta-ghost-href="index.html#modelle"
+    cta-ghost-label="Modelle vergleichen"
+    cta-primary-href="kontakt.html"
+    cta-primary-label="Beratung"
+  ></scandi-site-header>
+
+  <main id="inhalt">
+    <scandi-page-hero
+      eyebrow="Bestellung"
+      title="SCANDINAVIER"
+      tagline="bestellen"
+      lede="Modell und Menge wählen, Adresse ergänzen – wir bestätigen Ihre Bestellung per E-Mail. Alle Preise zzgl. MwSt."
+      aside-label="Modelle im Überblick"
+    >
+      <template data-part="stats">
+        <div class="page-hero-stats">
+          <span class="page-hero-stat"><strong>Modelle</strong> A355, A350, next, classic, kanzlei</span>
+          <span class="page-hero-stat"><strong>DATEV</strong> Schnittstellen inklusive</span>
+          <span class="page-hero-stat"><strong>Preise</strong> zzgl. MwSt.</span>
+        </div>
+      </template>
+      <template data-part="aside">
+        <div class="page-hero-tile page-hero-tile--featured">
+          <img src="media/homepage/logos/datev-anbieter-256.png" alt="">
+          <div>
+            <strong>DATEV-Anbieter</strong>
+            <span>KUHN IT GmbH · Welzheim</span>
+          </div>
+        </div>
+        <div class="page-hero-tile-grid">
+          <article class="page-hero-tile">
+            <img src="media/a355/a355-hero.png" alt="">
+            <strong>comfort</strong>
+            <span>A355 Pro · Empfehlung</span>
+          </article>
+          <article class="page-hero-tile">
+            <img src="media/homepage/products/scandinavier-a650.jpg" alt="">
+            <strong>kanzlei</strong>
+            <span>A650 · A3</span>
+          </article>
+          <article class="page-hero-tile">
+            <img src="media/homepage/icons/email.svg" alt="">
+            <strong>Fragen?</strong>
+            <span><a href="kontakt.html">Kontakt</a></span>
+          </article>
+        </div>
+      </template>
+    </scandi-page-hero>
+
+    <section class="order-main">
+      <div class="wrap">
+        <form class="order-form" id="scanner-order-form">
+          <div class="order-layout">
+            <div class="order-layout__main">
+            <header class="section-intro section-intro--stack order-section-head">
+              <div>
+                <p class="eyebrow">Scanner</p>
+                <h2>Modell &amp; Menge</h2>
+                <p class="section-intro__lede">Fünf Hardware-Varianten, dieselbe DATEV-Oberfläche. Mit +/− die Stückzahl wählen – mindestens ein Gerät.</p>
+              </div>
+            </header>
+
+              <div class="scanner-grid" aria-label="Scanner-Modelle">
+                <article class="scanner-card is-featured" data-scanner-card="a355">
+                  <div class="scanner-card__labels">
+                    <span class="scanner-pill scanner-pill--rec">Unsere Empfehlung</span>
+                    <span class="scanner-pill">Neu · A355 Pro</span>
+                  </div>
+                  <div class="scanner-card__media">
+                    <img src="media/a355/a355-hero.png" alt="SCANDINAVIER comfort, Plustek eScan A355 Pro">
+                  </div>
+                  <div class="scanner-card__body">
+                    <p class="scanner-card__kicker">Kanzleien &amp; Mandanten</p>
+                    <h3 class="scanner-card__title">SCANDINAVIER <span>comfort</span></h3>
+                    <p class="scanner-card__meta">Plustek <strong>A355 Pro</strong> · 25 ppm · 6.000 Seiten/Tag</p>
+                    <p class="scanner-card__note">inkl. SCANDINAVIER Software</p>
+                    <label class="scanner-card__addon">
+                      <input type="checkbox" name="a355-personalakte" id="a355-personalakte" data-personalakte="a355">
+                      <span>DATEV Personalakte +99,00 € einmalig</span>
+                    </label>
+                    <div class="scanner-card__foot">
+                      <div class="scanner-card__price">975,00 €<small>zzgl. MwSt.</small></div>
+                      <div class="scanner-card__stepper">
+                        <span class="visually-hidden" id="lbl-qty-a355">Anzahl comfort</span>
+                        <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a355">
+                          <button type="button" data-qty-dec="a355" aria-label="Menge verringern">−</button>
+                          <span data-qty-display aria-live="polite">0</span>
+                          <button type="button" data-qty-inc="a355" aria-label="Menge erhöhen">+</button>
+                        </div>
+                        <input type="hidden" name="anzahl-a355" data-scanner-qty="a355" value="0">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="scanner-card" data-scanner-card="a350">
+                  <div class="scanner-card__media">
+                    <img src="media/order/a280-product.png" alt="SCANDINAVIER comfort, Plustek A350">
+                  </div>
+                  <div class="scanner-card__body">
+                    <p class="scanner-card__kicker">Optimal für Mandanten</p>
+                    <h3 class="scanner-card__title">SCANDINAVIER <span>comfort</span></h3>
+                    <p class="scanner-card__meta">Plustek <strong>A350</strong> Hardware</p>
+                    <p class="scanner-card__note">inkl. SCANDINAVIER Software</p>
+                    <label class="scanner-card__addon">
+                      <input type="checkbox" name="a350-personalakte" id="a350-personalakte" data-personalakte="a350">
+                      <span>DATEV Personalakte +99,00 € einmalig</span>
+                    </label>
+                    <div class="scanner-card__foot">
+                      <div class="scanner-card__price">975,00 €<small>zzgl. MwSt.</small></div>
+                      <div class="scanner-card__stepper">
+                        <span class="visually-hidden" id="lbl-qty-a350">Anzahl comfort A350</span>
+                        <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a350">
+                          <button type="button" data-qty-dec="a350" aria-label="Menge verringern">−</button>
+                          <span data-qty-display aria-live="polite">0</span>
+                          <button type="button" data-qty-inc="a350" aria-label="Menge erhöhen">+</button>
+                        </div>
+                        <input type="hidden" name="anzahl-a350" data-scanner-qty="a350" value="0">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="scanner-card" data-scanner-card="a650">
+                  <div class="scanner-card__media">
+                    <img src="media/order/a650-product.jpg" alt="SCANDINAVIER kanzlei, Plustek A650">
+                  </div>
+                  <div class="scanner-card__body">
+                    <p class="scanner-card__kicker">Optimal für Kanzleien</p>
+                    <h3 class="scanner-card__title">SCANDINAVIER <span>kanzlei</span></h3>
+                    <p class="scanner-card__meta">Plustek A650 · DIN A3 · Premium-Plus 4 Jahre inkl.</p>
+                    <p class="scanner-card__note">DATEV Personalakte inklusive</p>
+                    <div class="scanner-card__foot">
+                      <div class="scanner-card__price">1.699,00 €<small>zzgl. MwSt.</small></div>
+                      <div class="scanner-card__stepper">
+                        <span class="visually-hidden" id="lbl-qty-a650">Anzahl kanzlei</span>
+                        <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a650">
+                          <button type="button" data-qty-dec="a650" aria-label="Menge verringern">−</button>
+                          <span data-qty-display aria-live="polite">0</span>
+                          <button type="button" data-qty-inc="a650" aria-label="Menge erhöhen">+</button>
+                        </div>
+                        <input type="hidden" name="anzahl-a650" data-scanner-qty="a650" value="0">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="scanner-card" data-scanner-card="a450">
+                  <div class="scanner-card__media">
+                    <img src="media/order/a450-product.jpg" alt="SCANDINAVIER next, Plustek A450">
+                  </div>
+                  <div class="scanner-card__body">
+                    <p class="scanner-card__kicker">Kanzleien &amp; Mandanten</p>
+                    <h3 class="scanner-card__title">SCANDINAVIER <span>next</span></h3>
+                    <p class="scanner-card__meta">Plustek A450 · hohes Tagesvolumen</p>
+                    <p class="scanner-card__note">DATEV Personalakte inklusive</p>
+                    <div class="scanner-card__foot">
+                      <div class="scanner-card__price">1.199,00 €<small>zzgl. MwSt.</small></div>
+                      <div class="scanner-card__stepper">
+                        <span class="visually-hidden" id="lbl-qty-a450">Anzahl next</span>
+                        <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a450">
+                          <button type="button" data-qty-dec="a450" aria-label="Menge verringern">−</button>
+                          <span data-qty-display aria-live="polite">0</span>
+                          <button type="button" data-qty-inc="a450" aria-label="Menge erhöhen">+</button>
+                        </div>
+                        <input type="hidden" name="anzahl-a450" data-scanner-qty="a450" value="0">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="scanner-card" data-scanner-card="a280">
+                  <div class="scanner-card__media">
+                    <img src="media/order/a280-product.png" alt="SCANDINAVIER classic, Plustek A280">
+                  </div>
+                  <div class="scanner-card__body">
+                    <p class="scanner-card__kicker">Optimal für Mandanten</p>
+                    <h3 class="scanner-card__title">SCANDINAVIER <span>classic</span></h3>
+                    <p class="scanner-card__meta">Plustek A280 · Einsteigermodell</p>
+                    <p class="scanner-card__note">inkl. SCANDINAVIER Software</p>
+                    <label class="scanner-card__addon">
+                      <input type="checkbox" name="a280-personalakte" id="a280-personalakte" data-personalakte="a280">
+                      <span>DATEV Personalakte +99,00 € einmalig</span>
+                    </label>
+                    <div class="scanner-card__foot">
+                      <div class="scanner-card__price">785,00 €<small>zzgl. MwSt.</small></div>
+                      <div class="scanner-card__stepper">
+                        <span class="visually-hidden" id="lbl-qty-a280">Anzahl classic</span>
+                        <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a280">
+                          <button type="button" data-qty-dec="a280" aria-label="Menge verringern">−</button>
+                          <span data-qty-display aria-live="polite">0</span>
+                          <button type="button" data-qty-inc="a280" aria-label="Menge erhöhen">+</button>
+                        </div>
+                        <input type="hidden" name="anzahl-a280" data-scanner-qty="a280" value="0">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+            <aside class="order-promise">
+              <img src="media/homepage/logos/datev-anbieter-256.png" alt="" width="48" height="48">
+              <p><strong>DATEV Unternehmen online</strong> bei allen Modellen · <strong>Meine Steuern</strong> bei comfort, next und kanzlei</p>
+            </aside>
+
+            <section class="order-panel">
+              <header class="order-panel__head">
+                <h3>Zusatzleistungen</h3>
+                <p>Optional buchbar – Preise zzgl. MwSt.</p>
+              </header>
+              <ul class="order-options">
+                <li class="order-option">
+                  <div class="order-option__text">
+                    <strong>Fernwartung Einrichtung</strong>
+                    <span>37,50 € / ¼ Stunde</span>
+                  </div>
+                  <div class="segmented" role="radiogroup" aria-label="Fernwartung">
+                    <label class="segmented__btn"><input type="radio" name="fernwartung" value="nein" checked><span>Nein</span></label>
+                    <label class="segmented__btn"><input type="radio" name="fernwartung" value="ja" required><span>Ja</span></label>
+                  </div>
+                </li>
+                <li class="order-option">
+                  <div class="order-option__text">
+                    <strong>Netzwerkkabel 3 m</strong>
+                    <span>5,00 € einmalig</span>
+                  </div>
+                  <div class="segmented" role="radiogroup" aria-label="Netzwerkkabel">
+                    <label class="segmented__btn"><input type="radio" name="netzwerkkabel" value="nein" checked><span>Nein</span></label>
+                    <label class="segmented__btn"><input type="radio" name="netzwerkkabel" value="ja" required><span>Ja</span></label>
+                  </div>
+                </li>
+                <li class="order-option">
+                  <div class="order-option__text">
+                    <strong>Premium-Plus-Service</strong>
+                    <span>175,00 € · 4 Jahre (kanzlei inkl.)</span>
+                  </div>
+                  <div class="segmented" role="radiogroup" aria-label="Premium-Plus-Service">
+                    <label class="segmented__btn"><input type="radio" name="premium-plus" value="nein" checked><span>Nein</span></label>
+                    <label class="segmented__btn"><input type="radio" name="premium-plus" value="ja" required><span>Ja</span></label>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <div class="order-address-blocks">
+              <section class="form-block">
+                <div class="form-block-head">
+                  <h3>Rechnungsadresse</h3>
+                </div>
+                <div class="form-row">
+                  <div>
+                    <label for="rechnung-firma">Firma / Kanzlei *</label>
+                    <input id="rechnung-firma" name="firma" required autocomplete="organization">
+                  </div>
+                  <div>
+                    <label for="rechnung-name">Name *</label>
+                    <input id="rechnung-name" name="name" required autocomplete="name">
+                  </div>
+                </div>
+                <label for="rechnung-strasse">Straße und Hausnummer *</label>
+                <input id="rechnung-strasse" name="strasse" required autocomplete="street-address">
+                <div class="form-row">
+                  <div>
+                    <label for="rechnung-plz">Postleitzahl *</label>
+                    <input id="rechnung-plz" name="plz" required autocomplete="postal-code">
+                  </div>
+                  <div>
+                    <label for="rechnung-ort">Ort *</label>
+                    <input id="rechnung-ort" name="ort" required autocomplete="address-level2">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div>
+                    <label for="rechnung-email">E-Mail *</label>
+                    <input id="rechnung-email" name="email" type="email" required autocomplete="email">
+                  </div>
+                  <div>
+                    <label for="rechnung-telefon">Telefon *</label>
+                    <input id="rechnung-telefon" name="telefon" type="tel" required autocomplete="tel">
+                  </div>
+                </div>
+                <label for="rechnung-ustid">Umsatzsteuer-ID</label>
+                <input id="rechnung-ustid" name="ustid" autocomplete="off">
+              </section>
+
+              <section class="form-block">
+                <div class="form-block-head">
+                  <h3>Lieferadresse</h3>
+                </div>
+                <label class="check">
+                  <input type="checkbox" id="liefer-wie-rechnung" name="liefer-wie-rechnung" checked>
+                  <span>Wie Rechnungsanschrift</span>
+                </label>
+                <div id="lieferadresse-block" hidden>
+                  <div class="form-row">
+                    <div>
+                      <label for="liefer-firma">Firma / Kanzlei *</label>
+                      <input id="liefer-firma" name="firma-liefer" data-liefer-required="true" autocomplete="organization">
+                    </div>
+                    <div>
+                      <label for="liefer-name">Name *</label>
+                      <input id="liefer-name" name="name-liefer" data-liefer-required="true" autocomplete="name">
+                    </div>
+                  </div>
+                  <label for="liefer-strasse">Straße und Hausnummer *</label>
+                  <input id="liefer-strasse" name="strasse-liefer" data-liefer-required="true" autocomplete="street-address">
+                  <div class="form-row">
+                    <div>
+                      <label for="liefer-plz">Postleitzahl *</label>
+                      <input id="liefer-plz" name="plz-liefer" data-liefer-required="true" autocomplete="postal-code">
+                    </div>
+                    <div>
+                      <label for="liefer-ort">Ort *</label>
+                      <input id="liefer-ort" name="ort-liefer" data-liefer-required="true" autocomplete="address-level2">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div>
+                      <label for="liefer-email">E-Mail</label>
+                      <input id="liefer-email" name="email-liefer" type="email" autocomplete="email">
+                    </div>
+                    <div>
+                      <label for="liefer-telefon">Telefon</label>
+                      <input id="liefer-telefon" name="telefon-liefer" type="tel" autocomplete="tel">
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="form-block">
+                <div class="form-block-head">
+                  <h3>Angaben zu Ihrem Steuerberater</h3>
+                  <p>Für die Einrichtung und DATEV-Anbindung.</p>
+                </div>
+                <label for="steuerberater-kanzlei">Name der Kanzlei des Steuerberaters</label>
+                <input id="steuerberater-kanzlei" name="steuerberater-kanzlei">
+                <div class="form-row">
+                  <div>
+                    <label for="unterberaternummer">Unterberaternummer</label>
+                    <input id="unterberaternummer" name="unterberaternummer">
+                  </div>
+                  <div>
+                    <label for="empfohlen-von">Empfohlen von</label>
+                    <input id="empfohlen-von" name="empfohlen-von">
+                  </div>
+                </div>
+              </section>
+
+              <section class="form-block">
+                <div class="form-block-head">
+                  <h3>Sind Sie Neukunde?</h3>
+                </div>
+                <div class="bundle-radios" role="radiogroup" aria-label="Neukunde">
+                  <label><input type="radio" name="neukunde" value="ja" required> Ja, ich bin Neukunde *</label>
+                  <label><input type="radio" name="neukunde" value="nein"> Nein, ich bin bereits Kunde</label>
+                </div>
+                <p class="order-neukunde-hint">* Bitte haben Sie Verständnis dafür, dass wir bei Neukunden für die erste Bestellung nur Vorauskasse anbieten können.</p>
+              </section>
+
+              <section class="form-block">
+                <label for="anmerkungen">Anmerkungen zur Bestellung</label>
+                <textarea id="anmerkungen" name="anmerkungen" placeholder="Wunschtermin, Ansprechpartner, Sonderwünsche …"></textarea>
+
+                <label class="check">
+                  <input type="checkbox" id="ansprechpartner-mail" name="ansprechpartner-benachrichtigung">
+                  <span>Ansprechpartner soll eine Bestätigung der Bestellung per E-Mail erhalten.</span>
+                </label>
+                <div class="form-row">
+                  <div>
+                    <label for="email-ansprechpartner">E-Mail Ansprechpartner</label>
+                    <input id="email-ansprechpartner" name="email-ansprechpartner" type="email">
+                  </div>
+                  <div>
+                    <label for="name-ansprechpartner">Name Ansprechpartner</label>
+                    <input id="name-ansprechpartner" name="name-ansprechpartner">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div>
+                    <label for="telefon-ansprechpartner">Telefon Ansprechpartner</label>
+                    <input id="telefon-ansprechpartner" name="telefon-ansprechpartner" type="tel">
+                  </div>
+                </div>
+
+                <label class="check">
+                  <input type="checkbox" id="agb-akzeptiert" name="agb" required>
+                  <span>* Hiermit bestelle ich verbindlich. Ich habe die <a href="https://www.scandinavier.de/agbs" target="_blank" rel="noreferrer">AGB</a> gelesen und bin mit deren Geltung einverstanden.</span>
+                </label>
+                <label class="check">
+                  <input type="checkbox" data-consent required>
+                  <span>Ich willige ein, dass die KUHN IT GmbH meine Angaben zur Bearbeitung dieser Bestellung verwendet.</span>
+                </label>
+
+                <a class="order-demo-link" href="https://www.scandinavier.de/supports/demogerat" target="_blank" rel="noreferrer">
+                  <img src="media/order/demo-info.png" alt="">
+                  <span>Warum liefern wir keine DEMO-Geräte aus?</span>
+                </a>
+              </section>
+            </div>
+            </div>
+
+            <aside class="order-cart" aria-labelledby="order-cart-title">
+              <h3 id="order-cart-title">Ihre Bestellung</h3>
+              <p class="order-cart__hint">Scanner, Optionen und Summe – zzgl. MwSt.</p>
+              <div class="order-cart__lines" id="order-cart-lines" hidden></div>
+              <p class="order-cart__empty" id="order-cart-empty">Noch kein Scanner gewählt</p>
+              <div class="order-cart__total">
+                <span>Zwischensumme</span>
+                <strong id="order-live-total">0,00 €</strong>
+              </div>
+              <button class="btn btn-light order-cart__submit" type="submit">Bestellung absenden</button>
+            </aside>
+          </div>
+
+          <div class="order-summary-bar order-summary-bar--mobile" aria-live="polite">
+            <div>
+              <span>Summe zzgl. MwSt.</span>
+              <strong id="order-live-total-mobile">0,00 €</strong>
+            </div>
+            <button class="btn btn-primary" type="submit">Absenden</button>
+          </div>
+
+          <div class="form-success">Vielen Dank! Wir haben Ihre Bestellung erhalten.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="brand">
+            <img class="brand-logo" src="media/homepage/logos/scandinavier-wordmark.png" alt="SCANDINAVIER">
+          </div>
+          <p>Der DATEV-Scanner ohne PC. Eine Entwicklung der <a href="https://www.kuhnit.de/loesungen-leistungen/scandinavier">KUHN IT GmbH</a>.</p>
+          <div class="social">
+            <a href="https://www.facebook.com/pg/KuhnIT/posts/" target="_blank" rel="noreferrer" aria-label="Facebook"><img src="media/homepage/icons/facebook.svg" alt=""></a>
+            <a href="mailto:info@kuhnit.de?subject=Bestellung%20SCANDINAVIER" aria-label="E-Mail"><img src="media/homepage/icons/email.svg" alt=""></a>
+          </div>
+        </div>
+        <div>
+          <strong style="color:#fff;">Produkt</strong>
+          <p>
+            <a href="index.html#modelle">Modelle</a><br>
+            <a href="index.html#datev">DATEV</a><br>
+            <a href="einrichtung.html">Einrichtung</a><br>
+            <a href="index.html#faq">FAQs</a>
+          </p>
+        </div>
+        <div>
+          <strong style="color:#fff;">Mehr</strong>
+          <p>
+            <a href="support.html">Support & Ersatzteile</a><br>
+            <a href="kontakt.html">Kontakt</a><br>
+            <a href="bestellformular.html">Bestellen</a><br>
+            <a href="https://www.scanmachine.de/">SCAN MACHINE</a>
+          </p>
+        </div>
+        <div>
+          <strong style="color:#fff;">KUHN IT GmbH</strong>
+          <p>Schwabäcker 36, 73642 Welzheim<br>
+          <a href="https://www.scandinavier.de/impressum">Impressum</a> ·
+          <a href="https://www.scandinavier.de/datenschutz">Datenschutz</a> ·
+          <a href="https://www.scandinavier.de/agbs">AGB</a></p>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 KUHN IT GmbH</span>
+        <span>Belege scannen. Direkt zu DATEV.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a class="btn btn-ghost" href="index.html#modelle">Modelle</a>
+    <a class="btn btn-primary" href="#scanner-order-form">Bestellen</a>
+  </div>
+
+  <script src="js/site-chrome.js"></script>
+  <script src="js/page-hero.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/order-form.js"></script>
+</body>
+</html>

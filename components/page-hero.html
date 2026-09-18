@@ -1,0 +1,37 @@
+<!-- Wird per js/page-hero.js aus <scandi-page-hero> erzeugt. Styles: css/page-hero.css -->
+
+<scandi-page-hero
+  eyebrow="Eyebrow"
+  title="Seitentitel"
+  tagline="Tagline in Teal"
+  lede="Einleitungstext."
+  aside-label="Kurzinfo"
+>
+  <template data-part="actions">
+    <div class="section-intro__actions hero-actions">
+      <a class="btn btn-primary" href="#">Primär</a>
+      <a class="btn btn-ghost" href="#">Sekundär</a>
+    </div>
+  </template>
+  <template data-part="stats">
+    <div class="page-hero-stats">
+      <span class="page-hero-stat"><strong>Label</strong> Wert</span>
+    </div>
+  </template>
+  <template data-part="aside">
+    <div class="page-hero-tile page-hero-tile--featured">
+      <img src="" alt="">
+      <div>
+        <strong>Titel</strong>
+        <span>Beschreibung</span>
+      </div>
+    </div>
+    <div class="page-hero-tile-grid">
+      <article class="page-hero-tile">
+        <img src="" alt="">
+        <strong>Kachel</strong>
+        <span>Text</span>
+      </article>
+    </div>
+  </template>
+</scandi-page-hero>

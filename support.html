@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support & Ersatzteile – SCANDINAVIER</title>
+  <meta name="description" content="Online-Hilfe, Kurzanleitungen und Ersatzteil-Shop für SCANDINAVIER Scanner – Schritt für Schritt von der KUHN IT GmbH.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/support.css">
+  <link rel="icon" href="media/homepage/logos/scandinavier-wordmark.png">
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+  <scandi-site-header
+    active="support"
+    cta-ghost-href="#ersatzteile"
+    cta-ghost-label="Ersatzteile"
+    cta-primary-href="bestellformular.html"
+    cta-primary-label="Scanner bestellen"
+  ></scandi-site-header>
+
+  <main id="inhalt">
+    <scandi-page-hero
+      eyebrow="Support & Zubehör"
+      title="Support"
+      tagline="bei uns läuft's"
+      lede="Kurzanleitungen, Fernhilfe und Ersatzteile – alles an einem Ort, im Look der Startseite und ohne Umwege."
+      aside-label="Support-Leistungen"
+    >
+      <template data-part="actions">
+        <div class="section-intro__actions hero-actions">
+          <a class="btn btn-primary" href="#anleitungen">Anleitungen</a>
+          <a class="btn btn-ghost" href="#ersatzteile">Ersatzteile bestellen</a>
+        </div>
+      </template>
+      <template data-part="stats">
+        <div class="page-hero-stats">
+          <span class="page-hero-stat"><strong>Remote</strong> TeamViewer am Gerät</span>
+          <span class="page-hero-stat"><strong>Shop</strong> 10 Ersatzteile</span>
+          <span class="page-hero-stat"><strong>Hilfe</strong> gefilterte Guides</span>
+        </div>
+      </template>
+      <template data-part="aside">
+        <div class="page-hero-tile page-hero-tile--featured">
+          <img src="media/support/icons/teamviewer.png" alt="">
+          <div>
+            <strong>TeamViewer integriert</strong>
+            <span>Fernwartung ohne Anfahrt</span>
+          </div>
+        </div>
+        <div class="page-hero-tile-grid">
+          <article class="page-hero-tile">
+            <img src="media/support/icons/wlan.png" alt="">
+            <strong>Einrichtung</strong>
+            <span>WLAN, SmartLogin, Rechte</span>
+          </article>
+          <article class="page-hero-tile">
+            <img src="media/support/icons/documents.png" alt="">
+            <strong>Ersatzteile</strong>
+            <span>Rollen, Kits, Netzteile</span>
+          </article>
+          <article class="page-hero-tile">
+            <img src="media/support/icons/broom.png" alt="">
+            <strong>Wartung</strong>
+            <span>Reinigen & kalibrieren</span>
+          </article>
+        </div>
+      </template>
+    </scandi-page-hero>
+
+    <section class="support-quick" aria-label="Support auf einen Blick">
+      <div class="wrap support-quick-grid">
+        <article class="support-quick-card">
+          <img src="media/support/icons/wlan.png" alt="">
+          <div>
+            <strong>Einrichtung & WLAN</strong>
+            <p>SmartLogin, Rechte, Netzwerk – Schritt für Schritt erklärt.</p>
+          </div>
+        </article>
+        <article class="support-quick-card">
+          <img src="media/support/icons/scanner.png" alt="">
+          <div>
+            <strong>Scannen im Alltag</strong>
+            <p>Einlegen, Duplex, Trennseiten – Tipps für saubere Scans.</p>
+          </div>
+        </article>
+        <article class="support-quick-card">
+          <img src="media/support/icons/broom.png" alt="">
+          <div>
+            <strong>Wartung</strong>
+            <p>Reinigen, Kalibrieren, Maintenance Kits – Intervalle im Blick.</p>
+          </div>
+        </article>
+        <article class="support-quick-card">
+          <img src="media/support/icons/teamviewer.png" alt="">
+          <div>
+            <strong>Remote & Updates</strong>
+            <p>Fernwartung und Firmware – ohne Software-Chaos beim Mandanten.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="anleitungen" class="guides">
+      <div class="wrap">
+        <header class="section-intro section-intro--split">
+          <div class="section-intro__main">
+            <p class="eyebrow">Kurzanleitungen</p>
+            <h2>Online Unterstützung</h2>
+            <p class="section-intro__lede">Suchen Sie ein Thema oder filtern Sie nach Bereich. Die ausführlichen Artikel öffnen auf scandinavier.de.</p>
+          </div>
+          <div class="section-intro__aside guide-search">
+            <label class="guide-search-label" for="guide-search">Suche</label>
+            <input id="guide-search" type="search" placeholder="Anleitung suchen …" aria-label="Anleitungen durchsuchen">
+          </div>
+        </header>
+        <div class="guides-panel">
+          <div class="guide-toolbar" role="tablist" aria-label="Themenfilter">
+            <button class="guide-filter is-active" type="button" role="tab" aria-selected="true" data-filter="all">Alle</button>
+            <button class="guide-filter" type="button" role="tab" aria-selected="false" data-filter="inbetriebnahme">Inbetriebnahme</button>
+            <button class="guide-filter" type="button" role="tab" aria-selected="false" data-filter="handhabung">Handhabung</button>
+            <button class="guide-filter" type="button" role="tab" aria-selected="false" data-filter="wartung">Wartung</button>
+            <button class="guide-filter" type="button" role="tab" aria-selected="false" data-filter="scanner">Scanner</button>
+            <button class="guide-filter" type="button" role="tab" aria-selected="false" data-filter="schnittstellen">Schnittstellen</button>
+          </div>
+          <div class="guide-list">
+            <a class="guide-link" data-category="inbetriebnahme" href="https://www.scandinavier.de/supports/wlan-zugriff-einrichten" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Inbetriebnahme</span>
+                <span class="guide-link-title">WLAN Zugriff einrichten</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="inbetriebnahme" href="https://www.scandinavier.de/supports/ersteinrichtung-scannen-nach-unternehmen-online" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Inbetriebnahme</span>
+                <span class="guide-link-title">Ersteinrichtung · Scannen nach Unternehmen online</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="inbetriebnahme" href="https://www.scandinavier.de/supports/uhrzeit-einstellen" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Inbetriebnahme</span>
+                <span class="guide-link-title">Uhrzeit, Format und Zeitzone korrekt einstellen</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="inbetriebnahme" href="https://www.scandinavier.de/supports/smartlogin" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Inbetriebnahme</span>
+                <span class="guide-link-title">Info über DATEV SmartLogin</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="inbetriebnahme" href="https://www.scandinavier.de/supports/berechtigungenprufen" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Inbetriebnahme</span>
+                <span class="guide-link-title">DATEV Rechte prüfen Ihres SmartLogins</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="handhabung" href="https://www.scandinavier.de/supports/scannen-so-wirds-gemacht" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Handhabung</span>
+                <span class="guide-link-title">Scannen: So wird's gemacht</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="handhabung" href="https://www.scandinavier.de/supports/dokumente-richtig-einlegen" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Handhabung</span>
+                <span class="guide-link-title">Dokumente richtig einlegen</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="handhabung" href="https://www.scandinavier.de/supports/papierstau-beheben" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Handhabung</span>
+                <span class="guide-link-title">Papierstau beheben</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="handhabung" href="https://www.scandinavier.de/supports/trennseiten-verwenden" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Handhabung</span>
+                <span class="guide-link-title">Trennseiten verwenden</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="wartung" href="https://www.scandinavier.de/supports/reinigen-des-scanners" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Wartung</span>
+                <span class="guide-link-title">Reinigen des Scanners</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="wartung" href="https://www.scandinavier.de/supports/geraetekalibrierung-durchfuhren" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Wartung</span>
+                <span class="guide-link-title">Gerätekalibrierung durchführen</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="wartung" href="https://www.scandinavier.de/supports/update" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Wartung</span>
+                <span class="guide-link-title">Update vom Hersteller laden</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="scanner" href="https://www.scandinavier.de/supports/modellvergleich-a280-vs-a350" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Scanner</span>
+                <span class="guide-link-title">Modellvergleich A280 vs. A350</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="scanner" href="https://www.scandinavier.de/supports/twin-modus-verwenden" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Scanner</span>
+                <span class="guide-link-title">TWAIN Modus verwenden</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="schnittstellen" href="https://www.scandinavier.de/supports/datevconnect-online-schnittstelle" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Schnittstellen</span>
+                <span class="guide-link-title">DATEVconnect online Schnittstelle</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="schnittstellen" href="https://www.scandinavier.de/supports/datev-meine-steuern" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Schnittstellen</span>
+                <span class="guide-link-title">DATEV Meine Steuern</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="schnittstellen" href="https://www.scandinavier.de/supports/smb-ziele-konfigurieren" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Schnittstellen</span>
+                <span class="guide-link-title">SMB Scan Ziel definieren (SCAN2SMB)</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+            <a class="guide-link" data-category="schnittstellen" href="https://www.scandinavier.de/supports/datev-personalakte-einrichten" target="_blank" rel="noreferrer">
+              <span class="guide-link-main">
+                <span class="guide-link-cat">Schnittstellen</span>
+                <span class="guide-link-title">DATEV Personalakte einrichten</span>
+              </span>
+              <span class="guide-link-action">Öffnen</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ersatzteile" class="band-paper">
+      <div class="wrap">
+        <header class="section-intro section-intro--stack">
+          <p class="eyebrow">Ersatzteile</p>
+          <h2>Ersatzteile bestellen</h2>
+          <p class="section-intro__lede">Rollen, Pads, Netzteile und Maintenance Kits – wählen Sie Artikel aus, prüfen Sie den Warenkorb und schließen Sie die Bestellung im Formular ab.</p>
+        </header>
+        <div class="shop-layout">
+          <div class="shop-grid">
+            <article class="part-card" data-part="a350-feed" data-title="Papierzuführung A350" data-price="3000">
+              <div class="part-media"><img src="media/support/products/einzug.jpg" alt="Papierzuführung SCANDINAVIER A350"></div>
+              <div class="part-body">
+                <h3>Papierzuführung für SCANDINAVIER <span style="color:var(--teal-deep);">A350</span></h3>
+                <p class="part-meta">Artikelnummer Z-27-K76-0204A110</p>
+                <div class="part-footer">
+                  <div class="part-price">30,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="a350-feed">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+            <article class="part-card" data-part="a280-feed" data-title="Papierzuführung A280" data-price="3000">
+              <div class="part-media"><img src="media/support/products/einzug.jpg" alt="Papierzuführung SCANDINAVIER A280"></div>
+              <div class="part-body">
+                <h3>Papierzuführung für SCANDINAVIER <span style="color:var(--teal-deep);">A280</span></h3>
+                <p class="part-meta">Artikelnummer Z-27-54A-0204A110</p>
+                <div class="part-footer">
+                  <div class="part-price">30,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="a280-feed">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+            <article class="part-card" data-part="power" data-title="Netzteil 24V" data-price="3100">
+              <div class="part-media part-media--zoom"><img src="media/support/products/netzteil.jpg" alt="Netzteil Adapter 24V"></div>
+              <div class="part-body">
+                <h3>Netzteil / Adapter 24V/2,70A</h3>
+                <p class="part-meta">Artikelnummer Z-0058</p>
+                <div class="part-footer">
+                  <div class="part-price">31,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="power">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+            <article class="part-card" data-part="friction" data-title="Friction Rollen Modul A350" data-price="2800">
+              <div class="part-media"><img src="media/support/products/rolle02.jpg" alt="Friction Rollen Modul A350"></div>
+              <div class="part-body">
+                <h3>Friction Rollen Modul <span style="color:var(--teal-deep);">A350</span></h3>
+                <p class="part-meta">Artikelnummer Z-27-541-0203A110</p>
+                <div class="part-footer">
+                  <div class="part-price">28,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="friction">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+            <article class="part-card" data-part="separator" data-title="Separator Pad A280" data-price="2100">
+              <div class="part-media part-media--zoom"><img src="media/support/products/separator-pad-a280.jpg" alt="Separator Pad A280"></div>
+              <div class="part-body">
+                <h3>Separator Pad <span style="color:var(--teal-deep);">A280</span></h3>
+                <p class="part-meta">Artikelnummer Z-27-65F-0201A120</p>
+                <div class="part-footer">
+                  <div class="part-price">21,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="separator">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+            <article class="part-card" data-part="roller" data-title="Zuführrolle A350/A280" data-price="3000">
+              <div class="part-media"><img src="media/support/products/rolle01.jpg" alt="Zuführrolle A350 A280"></div>
+              <div class="part-body">
+                <h3>Zuführrolle <span style="color:var(--teal-deep);">A350/A280</span></h3>
+                <p class="part-meta">Artikelnummer Z-27-541-0225A150</p>
+                <div class="part-footer">
+                  <div class="part-price">30,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="roller">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+            <article class="part-card" data-part="maint-a350" data-title="Maintenance Kit A350" data-price="5100">
+              <div class="part-media"><img src="media/support/products/maintenance-a350.jpg" alt="Maintenance Kit A350"></div>
+              <div class="part-body">
+                <h3>Maintenance Kit für <span style="color:var(--teal-deep);">A350</span></h3>
+                <p class="part-meta">Artikelnummer Z-27-541-0225A130</p>
+                <p class="part-includes">2× Kalibrierungsblatt, Reinigungsvlies, Friction Rollen Modul, Zuführrolle</p>
+                <div class="part-footer">
+                  <div class="part-price">51,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="maint-a350">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+            <article class="part-card" data-part="maint-a280" data-title="Maintenance Kit A280" data-price="5100">
+              <div class="part-media"><img src="media/support/products/maintenance-a280.jpg" alt="Maintenance Kit A280"></div>
+              <div class="part-body">
+                <h3>Maintenance Kit für <span style="color:var(--teal-deep);">A280</span></h3>
+                <p class="part-meta">Artikelnummer Z-27-54A-0221A120</p>
+                <p class="part-includes">2× Kalibrierungsblatt, Reinigungsvlies, Einzugsrolle, Separator</p>
+                <div class="part-footer">
+                  <div class="part-price">51,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="maint-a280">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+            <article class="part-card" data-part="bag" data-title="Tasche A280/A350" data-price="5000">
+              <div class="part-media"><img src="media/support/products/bag.jpg" alt="Transporttasche A280 A350"></div>
+              <div class="part-body">
+                <h3>Tasche für <span style="color:var(--teal-deep);">A280/A350</span></h3>
+                <p class="part-meta">Artikelnummer ZZ-27-531-0221A110</p>
+                <div class="part-footer">
+                  <div class="part-price">50,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="bag">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+            <article class="part-card" data-part="usb" data-title="USB-Anschlusskabel" data-price="800">
+              <div class="part-media part-media--zoom"><img src="media/support/products/usb.jpg" alt="USB Anschlusskabel"></div>
+              <div class="part-body">
+                <h3>USB-Anschlusskabel <span style="color:var(--teal-deep);">A280/A350</span></h3>
+                <p class="part-meta">Artikelnummer USB001</p>
+                <div class="part-footer">
+                  <div class="part-price">8,00 €<small>zzgl. MwSt.</small></div>
+                  <button class="part-toggle" type="button" data-part-toggle="usb">Hinzufügen</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="cart-panel" aria-live="polite">
+            <h3>Ihr Warenkorb</h3>
+            <p class="muted">Artikel antippen oder Mengen hier anpassen (max. 4 pro Position).</p>
+            <p class="cart-empty" id="cart-empty">Noch keine Artikel ausgewählt.</p>
+            <div class="cart-lines" id="cart-lines"></div>
+            <div class="cart-total">
+              <span>Zwischensumme</span>
+              <strong id="cart-total">0,00 €</strong>
+            </div>
+            <button class="btn btn-light" type="button" id="checkout-scroll" style="width:100%;">Zur Bestellung</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="bestellung" class="checkout">
+      <div class="wrap">
+        <header class="section-intro section-intro--stack">
+          <p class="eyebrow">Bestellung abschließen</p>
+          <h2>Bestellformular</h2>
+          <p class="section-intro__lede">Artikel mit Bild und Menge prüfen, Adresse ergänzen – Bestätigung folgt per E-Mail (Anbindung später).</p>
+        </header>
+        <div class="checkout-shell">
+          <form class="form form-order" id="parts-form">
+            <section class="form-block form-block--basket">
+              <div class="form-block-head">
+                <h3>Ihre Bestellung</h3>
+                <p>Artikel, Menge und Zwischensumme pro Position – nur ausgewählte Teile erscheinen hier.</p>
+              </div>
+              <p class="order-empty-hint" id="order-empty-hint">Noch keine Artikel – bitte oben im Shop auswählen.</p>
+              <div class="order-lines">
+              <div class="order-line" data-order-row="a350-feed">
+                <div class="order-line-thumb"><img src="media/support/products/einzug.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">Papierzuführung A350</span>
+                  <span class="order-line-meta">Z-27-K76-0204A110 · 30,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-a350-feed-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-a350-feed-label">
+                    <button type="button" data-qty-dec="a350-feed" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="a350-feed" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-a350-feed" data-qty-field name="qty-a350-feed" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="a350-feed">—</div>
+              </div>
+              <div class="order-line" data-order-row="a280-feed">
+                <div class="order-line-thumb"><img src="media/support/products/einzug.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">Papierzuführung A280</span>
+                  <span class="order-line-meta">Z-27-54A-0204A110 · 30,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-a280-feed-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-a280-feed-label">
+                    <button type="button" data-qty-dec="a280-feed" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="a280-feed" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-a280-feed" data-qty-field name="qty-a280-feed" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="a280-feed">—</div>
+              </div>
+              <div class="order-line" data-order-row="power">
+                <div class="order-line-thumb"><img src="media/support/products/netzteil.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">Netzteil / Adapter 24V</span>
+                  <span class="order-line-meta">Z-0058 · 31,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-power-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-power-label">
+                    <button type="button" data-qty-dec="power" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="power" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-power" data-qty-field name="qty-power" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="power">—</div>
+              </div>
+              <div class="order-line" data-order-row="friction">
+                <div class="order-line-thumb"><img src="media/support/products/rolle02.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">Friction Rollen Modul A350</span>
+                  <span class="order-line-meta">Z-27-541-0203A110 · 28,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-friction-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-friction-label">
+                    <button type="button" data-qty-dec="friction" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="friction" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-friction" data-qty-field name="qty-friction" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="friction">—</div>
+              </div>
+              <div class="order-line" data-order-row="separator">
+                <div class="order-line-thumb"><img src="media/support/products/separator-pad-a280.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">Separator Pad A280</span>
+                  <span class="order-line-meta">Z-27-65F-0201A120 · 21,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-separator-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-separator-label">
+                    <button type="button" data-qty-dec="separator" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="separator" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-separator" data-qty-field name="qty-separator" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="separator">—</div>
+              </div>
+              <div class="order-line" data-order-row="roller">
+                <div class="order-line-thumb"><img src="media/support/products/rolle01.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">Zuführrolle A350/A280</span>
+                  <span class="order-line-meta">Z-27-541-0225A150 · 30,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-roller-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-roller-label">
+                    <button type="button" data-qty-dec="roller" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="roller" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-roller" data-qty-field name="qty-roller" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="roller">—</div>
+              </div>
+              <div class="order-line" data-order-row="maint-a350">
+                <div class="order-line-thumb"><img src="media/support/products/maintenance-a350.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">Maintenance Kit A350</span>
+                  <span class="order-line-meta">Z-27-541-0225A130 · 51,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-maint-a350-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-maint-a350-label">
+                    <button type="button" data-qty-dec="maint-a350" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="maint-a350" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-maint-a350" data-qty-field name="qty-maint-a350" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="maint-a350">—</div>
+              </div>
+              <div class="order-line" data-order-row="maint-a280">
+                <div class="order-line-thumb"><img src="media/support/products/maintenance-a280.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">Maintenance Kit A280</span>
+                  <span class="order-line-meta">Z-27-54A-0221A120 · 51,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-maint-a280-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-maint-a280-label">
+                    <button type="button" data-qty-dec="maint-a280" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="maint-a280" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-maint-a280" data-qty-field name="qty-maint-a280" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="maint-a280">—</div>
+              </div>
+              <div class="order-line" data-order-row="bag">
+                <div class="order-line-thumb"><img src="media/support/products/bag.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">Tasche A280/A350</span>
+                  <span class="order-line-meta">ZZ-27-531-0221A110 · 50,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-bag-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-bag-label">
+                    <button type="button" data-qty-dec="bag" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="bag" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-bag" data-qty-field name="qty-bag" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="bag">—</div>
+              </div>
+              <div class="order-line" data-order-row="usb">
+                <div class="order-line-thumb"><img src="media/support/products/usb.jpg" alt=""></div>
+                <div class="order-line-details">
+                  <span class="order-line-title">USB-Anschlusskabel</span>
+                  <span class="order-line-meta">USB001 · 8,00 € / Stück</span>
+                </div>
+                <div class="order-line-qty">
+                  <span class="order-line-qty-label" id="qty-usb-label">Menge</span>
+                  <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="qty-usb-label">
+                    <button type="button" data-qty-dec="usb" aria-label="Menge verringern">−</button>
+                    <span data-qty-display aria-live="polite">0</span>
+                    <button type="button" data-qty-inc="usb" aria-label="Menge erhöhen">+</button>
+                  </div>
+                  <input type="hidden" id="qty-usb" data-qty-field name="qty-usb" value="0">
+                </div>
+                <div class="order-line-sum" data-order-sum="usb">—</div>
+              </div>
+              </div>
+              <div class="order-form-total">
+                <span>Gesamt (zzgl. MwSt.)</span>
+                <strong id="order-form-total">0,00 €</strong>
+              </div>
+            </section>
+
+            <section class="form-block">
+              <div class="form-block-head">
+                <h3>Lieferadresse</h3>
+                <p>Für die Bestellbestätigung und den Versand Ihrer Ersatzteile.</p>
+              </div>
+            <div class="form-row">
+              <div>
+                <label for="parts-name">Ihr Name *</label>
+                <input id="parts-name" name="name" required autocomplete="name">
+              </div>
+              <div>
+                <label for="parts-firma">Name der Kanzlei oder Firma *</label>
+                <input id="parts-firma" name="firma" required autocomplete="organization">
+              </div>
+            </div>
+            <label for="parts-email">E-Mail Adresse *</label>
+            <input id="parts-email" name="email" type="email" required autocomplete="email">
+            <div class="form-row">
+              <div>
+                <label for="parts-strasse">Straße *</label>
+                <input id="parts-strasse" name="strasse" required autocomplete="street-address">
+              </div>
+              <div>
+                <label for="parts-nr">Hausnummer *</label>
+                <input id="parts-nr" name="hausnummer" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="parts-plz">Postleitzahl *</label>
+                <input id="parts-plz" name="plz" required autocomplete="postal-code">
+              </div>
+              <div>
+                <label for="parts-ort">Ort *</label>
+                <input id="parts-ort" name="ort" required autocomplete="address-level2">
+              </div>
+            </div>
+            <button class="btn btn-dark" type="submit">Bestellung absenden</button>
+            </section>
+            <div class="form-success">Vielen Dank! Ihre Bestellung wurde erfasst – wir senden Ihnen eine Bestätigung.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="brand">
+            <img class="brand-logo" src="media/homepage/logos/scandinavier-wordmark.png" alt="SCANDINAVIER">
+          </div>
+          <p>Der DATEV-Scanner ohne PC. Eine Entwicklung der <a href="https://www.kuhnit.de/loesungen-leistungen/scandinavier">KUHN IT GmbH</a>.</p>
+          <div class="social">
+            <a href="https://www.facebook.com/pg/KuhnIT/posts/" target="_blank" rel="noreferrer" aria-label="Facebook"><img src="media/homepage/icons/facebook.svg" alt=""></a>
+            <a href="mailto:info@kuhnit.de?subject=Ersatzteile%20SCANDINAVIER" aria-label="E-Mail"><img src="media/homepage/icons/email.svg" alt=""></a>
+          </div>
+        </div>
+        <div>
+          <strong style="color:#fff;">Produkt</strong>
+          <p>
+            <a href="index.html#modelle">Modelle</a><br>
+            <a href="index.html#datev">DATEV</a><br>
+            <a href="einrichtung.html">Einrichtung</a><br>
+            <a href="index.html#faq">FAQs</a>
+          </p>
+        </div>
+        <div>
+          <strong style="color:#fff;">Mehr</strong>
+          <p>
+            <a href="support.html">Support & Ersatzteile</a><br>
+            <a href="kontakt.html">Kontakt</a><br>
+            <a href="https://www.scandinavier.de/scandinavier-on-tour">Live erleben</a><br>
+            <a href="https://www.scanmachine.de/">SCAN MACHINE</a>
+          </p>
+        </div>
+        <div>
+          <strong style="color:#fff;">KUHN IT GmbH</strong>
+          <p>Schwabäcker 36, 73642 Welzheim<br>
+          <a href="https://www.scandinavier.de/impressum">Impressum</a> ·
+          <a href="https://www.scandinavier.de/datenschutz">Datenschutz</a> ·
+          <a href="https://www.scandinavier.de/agbs">AGB</a></p>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 KUHN IT GmbH</span>
+        <span>Support · Ersatzteile · Anleitungen</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a class="btn btn-ghost" href="#ersatzteile">Ersatzteile</a>
+    <a class="btn btn-primary" href="#bestellung">Bestellen</a>
+  </div>
+
+  <script src="js/site-chrome.js"></script>
+  <script src="js/page-hero.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/support-shop.js"></script>
+</body>
+</html>

@@ -14,26 +14,13 @@
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="#hero" aria-label="SCANDINAVIER Start">
-        <img class="brand-logo" src="media/homepage/logos/scandinavier-wordmark.png" alt="SCANDINAVIER">
-      </a>
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="#einrichtung">Einrichtung</a>
-        <a href="#modelle">Modelle</a>
-        <a href="#stimmen">Stimmen</a>
-        <a href="#faq">FAQs</a>
-        <a href="#support">Support</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-      <div class="header-cta">
-        <a class="btn btn-ghost" href="#modelle">Modelle vergleichen</a>
-        <a class="btn btn-primary" href="#kontakt">Jetzt bestellen</a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
+  <scandi-site-header
+    home
+    cta-ghost-href="#modelle"
+    cta-ghost-label="Modelle vergleichen"
+    cta-primary-href="bestellformular.html"
+    cta-primary-label="Jetzt bestellen"
+  ></scandi-site-header>
 
   <main id="inhalt">
     <section class="hero" id="hero">
@@ -44,7 +31,7 @@
           <p class="lede">Ohne PC. Ohne Installation. Ohne Umwege. Der SCANDINAVIER holt Unternehmen und Belegtypen aus DATEV – und schickt Papier den kürzesten Weg ins Rechenzentrum.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#modelle">SCANDINAVIER entdecken</a>
-            <a class="btn btn-ghost" href="#kontakt">Jetzt bestellen</a>
+            <a class="btn btn-ghost" href="bestellformular.html">Jetzt bestellen</a>
           </div>
           <div class="usp-row">
             <span class="usp">Kein PC notwendig</span>
@@ -62,13 +49,6 @@
         </div>
       </div>
     </section>
-
-    <aside class="promise">
-      <div class="wrap promise-inner">
-        <img src="media/homepage/logos/datev-anbieter-256.png" alt="DATEV Anbieter Schnittstelle">
-        <p><strong>DATEV Unternehmen online</strong> — kein PC, keine Installation, keine Umwege. Belege gehen über DATEVconnect online direkt ins Rechenzentrum.</p>
-      </div>
-    </aside>
 
     <section class="nordic" aria-label="Markenwelt">
       <div class="wrap nordic-grid">
@@ -89,7 +69,7 @@
             <h2>Vier Schritte. Ein Ziel.</h2>
             <p>Unternehmen auswählen, Belegtyp wählen, scannen – die Übertragung nach DATEV startet direkt am Gerät. Kein Treiber. Kein PC. Keine Schulung.</p>
           </div>
-          <a class="btn btn-ghost" href="#einrichtung">Einrichtung ansehen</a>
+          <a class="btn btn-ghost" href="einrichtung.html">Einrichtung ansehen</a>
         </div>
         <div class="steps">
           <article class="step">
@@ -319,7 +299,7 @@
               <li><span>Tagesvolumen</span><strong>6.000</strong></li>
               <li><span>Maße</span><strong>318 × 170 × 189 mm</strong></li>
             </ul>
-            <a class="btn btn-primary" href="#kontakt">Dieses Modell</a>
+            <a class="btn btn-primary" href="bestellformular.html">Dieses Modell</a>
           </article>
           <article class="model">
             <div class="model-photo"><img src="media/homepage/products/scandinavier-a450.jpg" alt="SCANDINAVIER next"></div>
@@ -458,7 +438,7 @@
             <h2>Auspacken. Verbinden. Loslegen.</h2>
             <p>Sprache wählen, Netzwerk verbinden, DATEV SmartLogin, Bestände synchronisieren – dann der erste Scan. Die ausführlichen Screenshots bleiben im Support.</p>
           </div>
-          <a class="btn btn-ghost" href="https://www.scandinavier.de/einrichtung" target="_blank" rel="noreferrer">Komplette Anleitung</a>
+          <a class="btn btn-ghost" href="einrichtung.html">Komplette Anleitung</a>
         </div>
         <div class="setup-track">
           <article class="setup-step">
@@ -539,7 +519,7 @@
             <h2>Hilfe, die mitverkauft.</h2>
             <p>Schritt für Schritt, Remote und Ersatzteile – damit die Kanzlei nicht zur IT-Abteilung ihrer Mandanten wird.</p>
           </div>
-          <a class="btn btn-light" href="https://www.scandinavier.de/support" target="_blank" rel="noreferrer">Zum Support</a>
+          <a class="btn btn-light" href="support.html">Support & Ersatzteile</a>
         </div>
         <div class="support-grid">
           <article class="support-card">
@@ -552,7 +532,7 @@
           </article>
           <article class="support-card">
             <h3>Ersatzteile</h3>
-            <p>Rollen, Pads, Netzteile, Maintenance Kits – bestellbar, ohne den Scanner neu zu erklären.</p>
+            <p>Rollen, Pads, Netzteile, Maintenance Kits – <a href="support.html#ersatzteile" style="color:#9edef0;font-weight:600;">online bestellen</a>, ohne den Scanner neu zu erklären.</p>
           </article>
           <article class="support-card">
             <h3>Updates</h3>
@@ -610,8 +590,8 @@
           <p class="eyebrow">Bereit?</p>
           <h2>Bereit, Papier den kürzesten Weg zu DATEV nehmen zu lassen?</h2>
           <div class="close-actions">
-            <a class="btn btn-primary" href="#formular">SCANDINAVIER bestellen</a>
-            <a class="btn btn-ghost" href="#formular">Beratung anfragen</a>
+            <a class="btn btn-primary" href="bestellformular.html">SCANDINAVIER bestellen</a>
+            <a class="btn btn-ghost" href="kontakt.html">Alle Kontaktmöglichkeiten</a>
           </div>
         </div>
         <div class="contact-grid">
@@ -619,8 +599,14 @@
             <img src="media/homepage/people/julian-kraft.jpeg" alt="Julian Kraft, Geschäftsführer der KUHN IT GmbH">
             <h3>Schreiben Sie mir eine Nachricht</h3>
             <p>Kontaktieren Sie mich und mein Team, ich freue mich auf Ihre E-Mail.<br><strong>Julian Kraft</strong>, Geschäftsführer der KUHN IT GmbH</p>
+            <address class="contact-address">
+              <strong>KUHN IT GmbH</strong>
+              Schwabäcker 36<br>
+              73642 Welzheim<br>
+              <a href="mailto:info@kuhnit.de?subject=Nachricht%20an%20den%20SCANDINAVIER">info@kuhnit.de</a>
+            </address>
           </aside>
-          <form class="form" id="contact-form">
+          <form class="form contact-form" id="contact-form">
             <div class="fields" id="formular">
               <div class="form-row">
                 <div>
@@ -653,7 +639,7 @@
               <label for="nachricht">Nachricht</label>
               <textarea id="nachricht" name="nachricht" placeholder="Welches Modell, wie viele Geräte, wann?"></textarea>
               <label class="check">
-                <input id="consent" type="checkbox" required>
+                <input type="checkbox" data-consent required>
                 <span>Ich willige ein, dass die KUHN IT GmbH meine Angaben zur Bearbeitung dieser Anfrage verwendet. Hinweis zum Datenschutz auf der bestehenden Unterseite.</span>
               </label>
               <button class="btn btn-dark" type="submit">Nachricht senden</button>
@@ -684,14 +670,16 @@
           <p>
             <a href="#modelle">Modelle</a><br>
             <a href="#datev">DATEV</a><br>
-            <a href="#einrichtung">Einrichtung</a><br>
+            <a href="einrichtung.html">Einrichtung</a><br>
             <a href="#faq">FAQs</a>
           </p>
         </div>
         <div>
           <strong style="color:#fff;">Mehr</strong>
           <p>
-            <a href="https://www.scandinavier.de/support">Support</a><br>
+            <a href="support.html">Support & Ersatzteile</a><br>
+            <a href="bestellformular.html">Bestellen</a><br>
+            <a href="kontakt.html">Kontakt</a><br>
             <a href="https://www.scandinavier.de/scandinavier-on-tour">Live erleben</a><br>
             <a href="https://www.scanmachine.de/">SCAN MACHINE</a>
           </p>
@@ -713,7 +701,7 @@
 
   <div class="mobile-bar">
     <a class="btn btn-ghost" href="#modelle">Modelle</a>
-    <a class="btn btn-primary" href="#kontakt">Bestellen</a>
+    <a class="btn btn-primary" href="bestellformular.html">Bestellen</a>
   </div>
 
   <div class="modal" role="dialog" aria-modal="true" aria-label="Video">
@@ -721,6 +709,8 @@
     <div class="modal-inner"><iframe title="SCANDINAVIER Video" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
   </div>
 
+  <script src="js/site-chrome.js"></script>
+  <script src="js/motion.js"></script>
   <script src="js/ui.js"></script>
 </body>
 </html>
