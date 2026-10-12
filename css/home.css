@@ -46,6 +46,18 @@
   background: var(--teal);
 }
 
+.hero-claim {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--teal-deep);
+}
+
+.hero h1 {
+  font-size: clamp(2.15rem, 4.2vw, 3.6rem);
+}
+
 .hero h1 span {
   display: block;
 }
@@ -104,6 +116,92 @@
   width: min(100%, 620px);
   animation: float 7s var(--ease) infinite;
   filter: drop-shadow(0 28px 50px rgba(26, 28, 27, 0.18));
+}
+
+.hero-slider {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-slider__stage {
+  width: 100%;
+  height: 420px;
+  display: grid;
+  align-items: end;
+  justify-items: center;
+}
+
+.hero-slide {
+  display: none;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.hero-slide.is-active {
+  display: grid;
+  justify-items: center;
+  align-content: end;
+}
+
+.hero-slide img {
+  height: calc(var(--hero-scale, 1) * 340px);
+  width: auto;
+  max-width: 92%;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 50px rgba(26, 28, 27, 0.18));
+}
+
+.hero-slide figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.hero-slider__nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-slider__nav > button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.hero-slider__dots {
+  display: flex;
+  gap: 6px;
+}
+
+.hero-slider__dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--line-strong);
+  cursor: pointer;
+}
+
+.hero-slider__dots button.is-active,
+.hero-slider__dots button[aria-selected="true"] {
+  width: 22px;
+  background: var(--teal);
 }
 
 .hero-chips {
@@ -461,9 +559,61 @@
 
 /* Models */
 .models {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.models-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.models-row--current {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.models-row--legacy {
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  justify-content: center;
   gap: 12px;
+}
+
+.models-legacy-label {
+  grid-column: 1 / -1;
+  margin: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.model.is-legacy {
+  background: var(--snow);
+}
+
+.model.is-legacy .model-photo {
+  height: 120px;
+}
+
+.model.is-legacy .model-photo img {
+  max-height: 110px;
+}
+
+.link-quiet {
+  align-self: end;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link-quiet:hover {
+  color: var(--teal-deep);
 }
 
 .model {
@@ -845,6 +995,13 @@
   margin-bottom: 10px;
 }
 
+.support-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
 /* FAQ */
 .faq-list {
   display: grid;
@@ -1007,7 +1164,7 @@
   .bento,
   .audiences,
   .datev-grid,
-  .models,
+  .models-row--current,
   .proof,
   .setup-track,
   .support-grid,
@@ -1065,8 +1222,12 @@
     width: 78%;
   }
 
-  .hero-product {
-    width: min(86%, 340px);
+  .hero-slider__stage {
+    height: 280px;
+  }
+
+  .hero-slide img {
+    height: calc(var(--hero-scale, 1) * 210px);
   }
 
   .hero-kicker {
@@ -1089,19 +1250,41 @@
   }
 
   .hero-grid,
-  .steps,
   .bento,
   .audiences,
   .datev-grid,
-  .models,
+  .models-row--legacy,
   .proof,
-  .setup-track,
   .support-grid,
   .scan-targets,
   .connect-grid,
   .contact-grid,
   .nordic-grid {
     grid-template-columns: 1fr;
+  }
+
+  .steps,
+  .models-row--current,
+  .setup-track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    overscroll-behavior-y: none;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .steps > .step,
+  .models-row--current > .model,
+  .setup-track > .setup-step {
+    flex: 0 0 min(82%, 320px);
+    min-width: 0;
+    scroll-snap-align: start;
   }
 
   .hero-visual {

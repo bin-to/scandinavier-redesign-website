@@ -78,6 +78,57 @@
   });
 
   document.querySelector(".modal-close")?.addEventListener("click", closeModal);
+
+  const heroSlider = document.querySelector("[data-hero-slider]");
+  if (heroSlider) {
+    const slides = [...heroSlider.querySelectorAll(".hero-slide")];
+    const dots = [...heroSlider.querySelectorAll("[data-hero-dot]")];
+    let index = 0;
+    let timer = 0;
+
+    const show = (next) => {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const on = i === index;
+        slide.classList.toggle("is-active", on);
+        slide.hidden = !on;
+      });
+      dots.forEach((dot, i) => {
+        const on = i === index;
+        dot.classList.toggle("is-active", on);
+        dot.setAttribute("aria-selected", String(on));
+      });
+    };
+
+    const stop = () => window.clearInterval(timer);
+    const start = () => {
+      stop();
+      timer = window.setInterval(() => show(index + 1), 5000);
+    };
+
+    heroSlider.querySelector("[data-hero-prev]")?.addEventListener("click", () => {
+      show(index - 1);
+      start();
+    });
+    heroSlider.querySelector("[data-hero-next]")?.addEventListener("click", () => {
+      show(index + 1);
+      start();
+    });
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        show(Number(dot.dataset.heroDot));
+        start();
+      });
+    });
+    heroSlider.addEventListener("mouseenter", stop);
+    heroSlider.addEventListener("mouseleave", start);
+    heroSlider.addEventListener("focusin", stop);
+    heroSlider.addEventListener("focusout", (event) => {
+      if (!heroSlider.contains(event.relatedTarget)) start();
+    });
+    show(0);
+    start();
+  }
   modal?.addEventListener("click", (event) => {
     if (event.target === modal) closeModal();
   });

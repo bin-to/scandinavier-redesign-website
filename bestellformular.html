@@ -80,25 +80,29 @@
             </header>
 
               <div class="scanner-grid" aria-label="Scanner-Modelle">
-                <article class="scanner-card is-featured" data-scanner-card="a355">
+                <article class="scanner-card is-featured" id="scanner-a355" data-scanner-card="a355">
                   <div class="scanner-card__labels">
                     <span class="scanner-pill scanner-pill--rec">Unsere Empfehlung</span>
-                    <span class="scanner-pill">Neu · A355 Pro</span>
+                    <span class="scanner-pill">Neu · ersetzt den A350</span>
                   </div>
                   <div class="scanner-card__media">
                     <img src="media/a355/a355-hero.png" alt="SCANDINAVIER comfort, Plustek eScan A355 Pro">
                   </div>
                   <div class="scanner-card__body">
-                    <p class="scanner-card__kicker">Kanzleien &amp; Mandanten</p>
+                    <p class="scanner-card__kicker">Große Mandanten</p>
                     <h3 class="scanner-card__title">SCANDINAVIER <span>comfort</span></h3>
                     <p class="scanner-card__meta">Plustek <strong>A355 Pro</strong> · 25 ppm · 6.000 Seiten/Tag</p>
-                    <p class="scanner-card__note">inkl. SCANDINAVIER Software</p>
+                    <p class="scanner-card__note">Neu. Ersetzt den A350.</p>
+                    <label class="scanner-card__addon">
+                      <input type="checkbox" name="a355-software" id="a355-software" data-software="a355">
+                      <span>SCANDINAVIER Software +99,00 € <small>auch nachträglich</small></span>
+                    </label>
                     <label class="scanner-card__addon">
                       <input type="checkbox" name="a355-personalakte" id="a355-personalakte" data-personalakte="a355">
                       <span>DATEV Personalakte +99,00 € einmalig</span>
                     </label>
                     <div class="scanner-card__foot">
-                      <div class="scanner-card__price">975,00 €<small>zzgl. MwSt.</small></div>
+                      <div class="scanner-card__price">995,00 €<small>zzgl. MwSt.</small></div>
                       <div class="scanner-card__stepper">
                         <span class="visually-hidden" id="lbl-qty-a355">Anzahl comfort</span>
                         <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a355">
@@ -112,66 +116,14 @@
                   </div>
                 </article>
 
-                <article class="scanner-card" data-scanner-card="a350">
-                  <div class="scanner-card__media">
-                    <img src="media/order/a280-product.png" alt="SCANDINAVIER comfort, Plustek A350">
-                  </div>
-                  <div class="scanner-card__body">
-                    <p class="scanner-card__kicker">Optimal für Mandanten</p>
-                    <h3 class="scanner-card__title">SCANDINAVIER <span>comfort</span></h3>
-                    <p class="scanner-card__meta">Plustek <strong>A350</strong> Hardware</p>
-                    <p class="scanner-card__note">inkl. SCANDINAVIER Software</p>
-                    <label class="scanner-card__addon">
-                      <input type="checkbox" name="a350-personalakte" id="a350-personalakte" data-personalakte="a350">
-                      <span>DATEV Personalakte +99,00 € einmalig</span>
-                    </label>
-                    <div class="scanner-card__foot">
-                      <div class="scanner-card__price">975,00 €<small>zzgl. MwSt.</small></div>
-                      <div class="scanner-card__stepper">
-                        <span class="visually-hidden" id="lbl-qty-a350">Anzahl comfort A350</span>
-                        <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a350">
-                          <button type="button" data-qty-dec="a350" aria-label="Menge verringern">−</button>
-                          <span data-qty-display aria-live="polite">0</span>
-                          <button type="button" data-qty-inc="a350" aria-label="Menge erhöhen">+</button>
-                        </div>
-                        <input type="hidden" name="anzahl-a350" data-scanner-qty="a350" value="0">
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="scanner-card" data-scanner-card="a650">
-                  <div class="scanner-card__media">
-                    <img src="media/order/a650-product.jpg" alt="SCANDINAVIER kanzlei, Plustek A650">
-                  </div>
-                  <div class="scanner-card__body">
-                    <p class="scanner-card__kicker">Optimal für Kanzleien</p>
-                    <h3 class="scanner-card__title">SCANDINAVIER <span>kanzlei</span></h3>
-                    <p class="scanner-card__meta">Plustek A650 · DIN A3 · Premium-Plus 4 Jahre inkl.</p>
-                    <p class="scanner-card__note">DATEV Personalakte inklusive</p>
-                    <div class="scanner-card__foot">
-                      <div class="scanner-card__price">1.699,00 €<small>zzgl. MwSt.</small></div>
-                      <div class="scanner-card__stepper">
-                        <span class="visually-hidden" id="lbl-qty-a650">Anzahl kanzlei</span>
-                        <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a650">
-                          <button type="button" data-qty-dec="a650" aria-label="Menge verringern">−</button>
-                          <span data-qty-display aria-live="polite">0</span>
-                          <button type="button" data-qty-inc="a650" aria-label="Menge erhöhen">+</button>
-                        </div>
-                        <input type="hidden" name="anzahl-a650" data-scanner-qty="a650" value="0">
-                      </div>
-                    </div>
-                  </div>
-                </article>
-
-                <article class="scanner-card" data-scanner-card="a450">
+                <article class="scanner-card" id="scanner-a450" data-scanner-card="a450">
                   <div class="scanner-card__media">
                     <img src="media/order/a450-product.jpg" alt="SCANDINAVIER next, Plustek A450">
                   </div>
                   <div class="scanner-card__body">
-                    <p class="scanner-card__kicker">Kanzleien &amp; Mandanten</p>
+                    <p class="scanner-card__kicker">Kanzlei &amp; Mandant</p>
                     <h3 class="scanner-card__title">SCANDINAVIER <span>next</span></h3>
-                    <p class="scanner-card__meta">Plustek A450 · hohes Tagesvolumen</p>
+                    <p class="scanner-card__meta">Plustek A450 · hohes Tagesvolumen · A4</p>
                     <p class="scanner-card__note">DATEV Personalakte inklusive</p>
                     <div class="scanner-card__foot">
                       <div class="scanner-card__price">1.199,00 €<small>zzgl. MwSt.</small></div>
@@ -188,15 +140,46 @@
                   </div>
                 </article>
 
-                <article class="scanner-card" data-scanner-card="a280">
+                <article class="scanner-card" id="scanner-a650" data-scanner-card="a650">
+                  <div class="scanner-card__media">
+                    <img src="media/order/a650-product.jpg" alt="SCANDINAVIER kanzlei, Plustek A650">
+                  </div>
+                  <div class="scanner-card__body">
+                    <p class="scanner-card__kicker">Kanzlei</p>
+                    <h3 class="scanner-card__title">SCANDINAVIER <span>kanzlei</span></h3>
+                    <p class="scanner-card__meta">Plustek A650 · A4 und A3, auch quer · Premium-Plus inklusive</p>
+                    <p class="scanner-card__note">DATEV Personalakte inklusive</p>
+                    <div class="scanner-card__foot">
+                      <div class="scanner-card__price">1.699,00 €<small>zzgl. MwSt.</small></div>
+                      <div class="scanner-card__stepper">
+                        <span class="visually-hidden" id="lbl-qty-a650">Anzahl kanzlei</span>
+                        <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a650">
+                          <button type="button" data-qty-dec="a650" aria-label="Menge verringern">−</button>
+                          <span data-qty-display aria-live="polite">0</span>
+                          <button type="button" data-qty-inc="a650" aria-label="Menge erhöhen">+</button>
+                        </div>
+                        <input type="hidden" name="anzahl-a650" data-scanner-qty="a650" value="0">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <p class="scanner-legacy-label">Auslaufmodelle</p>
+                <article class="scanner-card is-legacy" id="scanner-a280" data-scanner-card="a280">
+                  <div class="scanner-card__labels">
+                    <span class="scanner-pill scanner-pill--end">Auslaufmodell</span>
+                  </div>
                   <div class="scanner-card__media">
                     <img src="media/order/a280-product.png" alt="SCANDINAVIER classic, Plustek A280">
                   </div>
                   <div class="scanner-card__body">
-                    <p class="scanner-card__kicker">Optimal für Mandanten</p>
+                    <p class="scanner-card__kicker">Kleine Mandanten</p>
                     <h3 class="scanner-card__title">SCANDINAVIER <span>classic</span></h3>
                     <p class="scanner-card__meta">Plustek A280 · Einsteigermodell</p>
-                    <p class="scanner-card__note">inkl. SCANDINAVIER Software</p>
+                    <label class="scanner-card__addon">
+                      <input type="checkbox" name="a280-software" id="a280-software" data-software="a280">
+                      <span>SCANDINAVIER Software +99,00 € <small>auch nachträglich</small></span>
+                    </label>
                     <label class="scanner-card__addon">
                       <input type="checkbox" name="a280-personalakte" id="a280-personalakte" data-personalakte="a280">
                       <span>DATEV Personalakte +99,00 € einmalig</span>
@@ -211,6 +194,39 @@
                           <button type="button" data-qty-inc="a280" aria-label="Menge erhöhen">+</button>
                         </div>
                         <input type="hidden" name="anzahl-a280" data-scanner-qty="a280" value="0">
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="scanner-card is-legacy" id="scanner-a350" data-scanner-card="a350">
+                  <div class="scanner-card__labels">
+                    <span class="scanner-pill scanner-pill--end">Auslaufmodell</span>
+                  </div>
+                  <div class="scanner-card__media">
+                    <img src="media/order/a280-product.png" alt="SCANDINAVIER comfort, Plustek A350">
+                  </div>
+                  <div class="scanner-card__body">
+                    <p class="scanner-card__kicker">Auslaufmodell</p>
+                    <h3 class="scanner-card__title">SCANDINAVIER <span>comfort</span></h3>
+                    <p class="scanner-card__meta">Plustek <strong>A350</strong> · wird durch den A355 ersetzt</p>
+                    <label class="scanner-card__addon">
+                      <input type="checkbox" name="a350-software" id="a350-software" data-software="a350">
+                      <span>SCANDINAVIER Software +99,00 € <small>auch nachträglich</small></span>
+                    </label>
+                    <label class="scanner-card__addon">
+                      <input type="checkbox" name="a350-personalakte" id="a350-personalakte" data-personalakte="a350">
+                      <span>DATEV Personalakte +99,00 € einmalig</span>
+                    </label>
+                    <div class="scanner-card__foot">
+                      <div class="scanner-card__price">975,00 €<small>zzgl. MwSt.</small></div>
+                      <div class="scanner-card__stepper">
+                        <span class="visually-hidden" id="lbl-qty-a350">Anzahl comfort A350</span>
+                        <div class="qty-stepper qty-stepper--light" role="group" aria-labelledby="lbl-qty-a350">
+                          <button type="button" data-qty-dec="a350" aria-label="Menge verringern">−</button>
+                          <span data-qty-display aria-live="polite">0</span>
+                          <button type="button" data-qty-inc="a350" aria-label="Menge erhöhen">+</button>
+                        </div>
+                        <input type="hidden" name="anzahl-a350" data-scanner-qty="a350" value="0">
                       </div>
                     </div>
                   </div>
@@ -250,12 +266,29 @@
                 </li>
                 <li class="order-option">
                   <div class="order-option__text">
-                    <strong>Premium-Plus-Service</strong>
-                    <span>175,00 € · 4 Jahre (kanzlei inkl.)</span>
+                    <strong>Software nachträglich</strong>
+                    <span>99,00 € für ein vorhandenes A280, A350 oder A355</span>
+                  </div>
+                  <div class="segmented" role="radiogroup" aria-label="Software nachträglich">
+                    <label class="segmented__btn"><input type="radio" name="software-nachtraeglich" value="nein" checked><span>Nein</span></label>
+                    <label class="segmented__btn"><input type="radio" name="software-nachtraeglich" value="ja"><span>Ja</span></label>
+                  </div>
+                </li>
+                <li class="order-option" id="premium-option">
+                  <div class="order-option__text">
+                    <strong class="order-option__title">Premium-Plus-Service
+                      <button type="button" class="info-tip" aria-expanded="false" aria-controls="garantie-info">
+                        <span aria-hidden="true">i</span>
+                        <span class="visually-hidden">Was die Garantie umfasst</span>
+                      </button>
+                    </strong>
+                    <span>175,00 € · 4 Jahre</span>
+                    <span class="order-option__hint" id="premium-hint" hidden>Beim SCANDINAVIER kanzlei bereits inklusive.</span>
+                    <p class="info-tip-panel" id="garantie-info" hidden>Zum Beispiel ein Ersatzgerät innerhalb von 48 Stunden.</p>
                   </div>
                   <div class="segmented" role="radiogroup" aria-label="Premium-Plus-Service">
                     <label class="segmented__btn"><input type="radio" name="premium-plus" value="nein" checked><span>Nein</span></label>
-                    <label class="segmented__btn"><input type="radio" name="premium-plus" value="ja" required><span>Ja</span></label>
+                    <label class="segmented__btn"><input type="radio" name="premium-plus" value="ja"><span>Ja</span></label>
                   </div>
                 </li>
               </ul>

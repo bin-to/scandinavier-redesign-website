@@ -11,7 +11,7 @@
   const SCANNERS = {
     a355: {
       title: "SCANDINAVIER comfort (A355 Pro)",
-      price: 97500,
+      price: 99500,
       image: "media/a355/a355-hero.png",
     },
     a350: {
@@ -38,6 +38,7 @@
 
   const PRICES = {
     personalakte: 9900,
+    software: 9900,
     cable: 500,
     premium: 17500,
     remote: 3750,
@@ -56,9 +57,15 @@
   });
 
   const personalakteChecks = form.querySelectorAll("[data-personalakte]");
+  const softwareChecks = form.querySelectorAll("[data-software]");
   const premiumRadios = form.querySelectorAll('input[name="premium-plus"]');
+  const softwareLaterRadios = form.querySelectorAll('input[name="software-nachtraeglich"]');
   const cableRadios = form.querySelectorAll('input[name="netzwerkkabel"]');
   const remoteRadios = form.querySelectorAll('input[name="fernwartung"]');
+  const premiumOption = document.querySelector("#premium-option");
+  const premiumHint = document.querySelector("#premium-hint");
+  const garantieBtn = document.querySelector(".info-tip");
+  const garantiePanel = document.querySelector("#garantie-info");
 
   const lieferToggle = document.querySelector("#liefer-wie-rechnung");
   const lieferBlock = document.querySelector("#lieferadresse-block");
@@ -101,9 +108,52 @@
     return picked?.value === "ja";
   }
 
+  function addonLines(checks, price, label) {
+    const lines = [];
+    checks.forEach((box) => {
+      if (!box.checked) return;
+      const id = box.dataset.personalakte || box.dataset.software;
+      const qty = getQty(id);
+      if (qty <= 0) return;
+      const lineSum = price * qty;
+      lines.push({
+        title: `${label} · ${SCANNERS[id]?.title || id}`,
+        qty,
+        lineSum,
+      });
+    });
+    return lines;
+  }
+
+  function onlyKanzlei() {
+    const kanzlei = getQty("a650") > 0;
+    const others = [...state.keys()].some((id) => id !== "a650");
+    return kanzlei && !others;
+  }
+
+  function syncPremium() {
+    const kanzlei = getQty("a650") > 0;
+    const locked = onlyKanzlei();
+    premiumOption?.classList.toggle("is-included", locked);
+    premiumRadios.forEach((radio) => {
+      radio.disabled = locked;
+      if (locked && radio.value === "nein") radio.checked = true;
+    });
+    if (!premiumHint) return;
+    if (!kanzlei) {
+      premiumHint.hidden = true;
+      return;
+    }
+    premiumHint.hidden = false;
+    premiumHint.textContent = locked
+      ? "Beim SCANDINAVIER kanzlei bereits inklusive."
+      : "Beim kanzlei bereits inklusive. Die Option gilt für die weiteren Geräte.";
+  }
+
   function computeTotal() {
     let total = 0;
     const lineItems = [];
+    const extras = [];
 
     state.forEach((qty, id) => {
       const product = SCANNERS[id];
@@ -113,22 +163,33 @@
       lineItems.push({ id, qty, product, lineSum });
     });
 
-    personalakteChecks.forEach((box) => {
-      if (!box.checked) return;
-      const id = box.dataset.personalakte;
-      const qty = getQty(id);
-      if (qty > 0) total += PRICES.personalakte * qty;
+    addonLines(softwareChecks, PRICES.software, "Software").forEach((line) => {
+      total += line.lineSum;
+      extras.push(line);
+    });
+    addonLines(personalakteChecks, PRICES.personalakte, "DATEV Personalakte").forEach((line) => {
+      total += line.lineSum;
+      extras.push(line);
     });
 
+    if (radioYes(softwareLaterRadios)) {
+      total += PRICES.software;
+      extras.push({
+        title: "Software nachträglich",
+        qty: 1,
+        lineSum: PRICES.software,
+      });
+    }
     if (radioYes(cableRadios)) total += PRICES.cable;
-    if (radioYes(premiumRadios)) total += PRICES.premium;
+    if (radioYes(premiumRadios) && !onlyKanzlei()) total += PRICES.premium;
     if (radioYes(remoteRadios)) total += PRICES.remote;
 
-    return { total, lineItems };
+    return { total, lineItems, extras };
   }
 
   function render() {
-    const { total, lineItems } = computeTotal();
+    syncPremium();
+    const { total, lineItems, extras } = computeTotal();
     const formatted = formatEuro(total);
 
     if (totalDesktop) totalDesktop.textContent = formatted;
@@ -136,7 +197,7 @@
 
     if (!cartLines || !cartEmpty) return;
 
-    if (!lineItems.length) {
+    if (!lineItems.length && !extras.length) {
       cartLines.hidden = true;
       cartLines.innerHTML = "";
       cartEmpty.hidden = false;
@@ -145,7 +206,7 @@
 
     cartEmpty.hidden = true;
     cartLines.hidden = false;
-    cartLines.innerHTML = lineItems
+    const scannerHtml = lineItems
       .map(
         ({ product, qty, lineSum }) => `
         <div class="order-cart__line">
@@ -159,6 +220,18 @@
         </div>`,
       )
       .join("");
+    const extraHtml = extras
+      .map(
+        ({ title, qty, lineSum }) => `
+        <div class="order-cart__line order-cart__line--extra">
+          <div>
+            <strong>${title}</strong>
+            <span>${qty}× · ${formatEuro(lineSum)}</span>
+          </div>
+        </div>`,
+      )
+      .join("");
+    cartLines.innerHTML = scannerHtml + extraHtml;
   }
 
   function syncLiefer() {
@@ -186,9 +259,16 @@
     }
   });
 
-  [...personalakteChecks, ...premiumRadios, ...cableRadios, ...remoteRadios].forEach(
+  [...personalakteChecks, ...softwareChecks, ...premiumRadios, ...softwareLaterRadios, ...cableRadios, ...remoteRadios].forEach(
     (el) => el.addEventListener("change", render),
   );
+
+  garantieBtn?.addEventListener("click", () => {
+    if (!garantiePanel) return;
+    const open = garantiePanel.hidden;
+    garantiePanel.hidden = !open;
+    garantieBtn.setAttribute("aria-expanded", String(open));
+  });
 
   lieferToggle?.addEventListener("change", syncLiefer);
   notifyCheck?.addEventListener("change", syncNotifyEmail);
@@ -198,11 +278,16 @@
   syncNotifyEmail();
   render();
 
+  const hashTarget = location.hash ? document.querySelector(location.hash) : null;
+  if (hashTarget?.classList.contains("scanner-card")) {
+    hashTarget.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if (state.size === 0) {
-      window.alert("Bitte wählen Sie mindestens einen Scanner (Menge größer 0).");
+    if (state.size === 0 && !radioYes(softwareLaterRadios)) {
+      window.alert("Bitte wählen Sie mindestens einen Scanner oder die Software nachträglich.");
       document.querySelector(".scanner-grid")?.scrollIntoView({ behavior: "smooth" });
       return;
     }
