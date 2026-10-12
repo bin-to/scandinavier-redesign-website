@@ -160,7 +160,27 @@
 }
 
 @media (max-width: 640px) {
+  .page-hero {
+    padding: 28px 0 40px;
+  }
+
+  .page-hero-copy h1 {
+    font-size: clamp(2.15rem, 10vw, 2.7rem);
+  }
+
+  .page-hero-tagline {
+    margin-top: 8px;
+  }
+
+  .page-hero-stats {
+    margin-top: 22px;
+  }
+
   .page-hero-tile-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-hero-tile {
+    padding: 14px 16px;
   }
 }

@@ -13,10 +13,17 @@
   toggle?.addEventListener("click", () => {
     const open = nav.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+    document.body.classList.toggle("nav-open", open);
   });
 
   nav?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => nav.classList.remove("is-open"));
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      toggle?.setAttribute("aria-expanded", "false");
+      toggle?.setAttribute("aria-label", "Menü öffnen");
+      document.body.classList.remove("nav-open");
+    });
   });
 
   document.querySelectorAll("[data-topic-picker]").forEach((picker) => {

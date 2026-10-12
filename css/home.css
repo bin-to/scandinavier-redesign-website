@@ -528,13 +528,20 @@
 .specs li {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   gap: 12px;
   border-top: 1px solid var(--line);
   padding-top: 8px;
 }
 
+.specs li span,
+.specs strong {
+  min-width: 0;
+}
+
 .specs strong {
   font-weight: 600;
+  text-align: right;
 }
 
 .model .btn:last-child {
@@ -853,12 +860,31 @@
 .faq-item summary {
   cursor: pointer;
   list-style: none;
-  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  padding: 16px 18px;
   font-weight: 600;
 }
 
 .faq-item summary::-webkit-details-marker {
   display: none;
+}
+
+.faq-item summary::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--teal-deep);
+  border-bottom: 2px solid var(--teal-deep);
+  transform: translateY(-2px) rotate(45deg);
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+  transform: translateY(2px) rotate(225deg);
 }
 
 .faq-item p {
@@ -937,6 +963,7 @@
 
 .close-actions {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
   margin: 28px 0 48px;
@@ -1006,15 +1033,59 @@
   }
 
   .size-stage {
-    padding-right: 12px;
-    overflow-x: auto;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: end;
+    justify-items: center;
+    gap: 16px 8px;
+    overflow: visible;
+    padding: 8px 0 0;
+    min-height: 0;
+  }
+
+  .size-compare {
+    --size-scale: 0.34;
   }
 }
 
 @media (max-width: 720px) {
   .hero {
-    padding: 24px 0 40px;
+    padding: 8px 0 36px;
+  }
+
+  .hero-grid {
+    gap: 8px;
+  }
+
+  .hero-visual {
+    gap: 12px;
+  }
+
+  .hero-visual::before {
+    width: 78%;
+  }
+
+  .hero-product {
+    width: min(86%, 340px);
+  }
+
+  .hero-kicker {
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.15rem, 10.5vw, 2.75rem);
+  }
+
+  .hero .lede {
+    margin: 14px 0 18px;
+    font-size: 1.02rem;
+  }
+
+  .hero-actions {
+    margin-bottom: 18px;
   }
 
   .hero-grid,
@@ -1039,42 +1110,59 @@
   }
 
   .hero-chips {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: stretch;
   }
 
   .hero-chip {
     text-align: left;
+    padding: 10px 12px;
   }
 
   .promise-inner {
     align-items: flex-start;
   }
 
+  .nordic {
+    min-height: 0;
+    padding: 56px 0;
+  }
+
   .nordic-sign {
-    max-width: 280px;
+    max-width: min(100%, 280px);
     margin-inline: auto;
   }
 
-  .models,
-  .steps,
-  .setup-track {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 12px;
-    padding-bottom: 8px;
+  .tile,
+  .audience,
+  .datev-card,
+  .quote-main {
+    padding: 22px 18px;
   }
 
-  .model,
-  .step,
-  .setup-step {
-    flex: 0 0 78%;
-    scroll-snap-align: start;
+  .tile-wide {
+    min-height: 0;
+  }
+
+  .tile h3 {
+    font-size: 1.35rem;
+  }
+
+  .size-compare {
+    --size-scale: 0.3;
+    padding: 22px 16px 18px;
+    margin-top: 28px;
   }
 
   .size-stage {
-    align-items: flex-end;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 10px;
+    margin-top: 24px;
+  }
+
+  .size-unit figcaption {
+    font-size: 0.75rem;
   }
 
   .dim-h {
@@ -1082,7 +1170,11 @@
   }
 
   .scanmachine-panel {
-    min-height: 380px;
-    padding: 48px 24px;
+    min-height: 320px;
+    padding: 40px 20px;
+  }
+
+  .quote-main blockquote {
+    font-size: 1.28rem;
   }
 }

@@ -627,13 +627,41 @@
     display: flex;
   }
 
+  .order-summary-bar {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    z-index: 45;
+  }
+
   .order-main {
-    padding-bottom: 120px;
+    padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px));
+  }
+
+  body:has(.order-summary-bar--mobile) .mobile-bar {
+    display: none;
+  }
+
+  body:has(.order-summary-bar--mobile) {
+    padding-bottom: 0;
   }
 }
 
 @media (max-width: 640px) {
   .scanner-grid {
     grid-template-columns: 1fr;
+  }
+
+  .qty-stepper button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .order-panel,
+  .form-block {
+    padding: 18px 16px;
+  }
+
+  .bundle-options,
+  .scanner-card__foot {
+    align-items: stretch;
   }
 }

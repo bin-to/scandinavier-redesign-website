@@ -123,9 +123,10 @@ textarea {
   width: 100%;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
-  min-height: 46px;
-  padding: 10px 12px;
+  min-height: 48px;
+  padding: 12px 14px;
   background: var(--snow);
+  font-size: 1rem;
 }
 
 textarea {
@@ -135,16 +136,21 @@ textarea {
 
 .check {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
   margin: 16px 0;
-  font-size: 0.82rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
   color: var(--muted);
 }
 
 .check input {
-  width: 18px;
-  min-height: 18px;
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  margin-top: 1px;
+  flex-shrink: 0;
+  accent-color: var(--teal-deep);
 }
 
 .contact-address {
@@ -279,12 +285,15 @@ textarea {
 
 .modal-close {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
   color: #fff;
   background: transparent;
   border: 0;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  line-height: 1;
   cursor: pointer;
 }
 

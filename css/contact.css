@@ -121,7 +121,12 @@
 }
 
 @media (max-width: 640px) {
-  .contact-form-panel {
-    padding: 22px 18px 26px;
+  .contact-form-panel,
+  .contact-aside .ceo-card {
+    padding: 20px 16px 22px;
+  }
+
+  .contact-main {
+    padding-top: 8px;
   }
 }

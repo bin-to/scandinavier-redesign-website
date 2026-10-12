@@ -829,16 +829,19 @@
   }
 
   .guide-toolbar {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    margin-inline: -4px;
-    padding-inline: 4px;
+    flex-wrap: wrap;
+    overflow: visible;
   }
 
   .guide-filter {
-    flex: 0 0 auto;
+    flex: 1 1 calc(50% - 4px);
+    min-height: 44px;
+    min-width: 0;
+  }
+
+  .qty-stepper button {
+    width: 44px;
+    height: 44px;
   }
 
   .guide-link {
