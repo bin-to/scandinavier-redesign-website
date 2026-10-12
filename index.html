@@ -42,28 +42,26 @@
         </div>
         <div class="hero-visual">
           <div class="hero-slider" data-hero-slider>
+            <button class="hero-slider__arrow" type="button" data-hero-prev aria-label="Vorheriges Modell">‹</button>
             <div class="hero-slider__stage">
               <figure class="hero-slide is-active" style="--hero-scale: 0.64">
                 <img src="media/a355/a355-hero.png" alt="SCANDINAVIER comfort, A355 Pro">
                 <figcaption>comfort · A355</figcaption>
               </figure>
               <figure class="hero-slide" style="--hero-scale: 0.8" hidden>
-                <img src="media/homepage/products/scandinavier-a450.jpg" alt="SCANDINAVIER next, A450">
+                <img src="media/homepage/products/scandinavier-a450.png" alt="SCANDINAVIER next, A450">
                 <figcaption>next · A450</figcaption>
               </figure>
               <figure class="hero-slide" style="--hero-scale: 1" hidden>
-                <img src="media/homepage/products/scandinavier-a650.jpg" alt="SCANDINAVIER kanzlei, A650">
+                <img src="media/homepage/products/scandinavier-a650.png" alt="SCANDINAVIER kanzlei, A650">
                 <figcaption>kanzlei · A650</figcaption>
               </figure>
             </div>
-            <div class="hero-slider__nav">
-              <button type="button" data-hero-prev aria-label="Vorheriges Modell">‹</button>
-              <div class="hero-slider__dots" role="tablist" aria-label="Modelle">
-                <button type="button" role="tab" aria-selected="true" data-hero-dot="0" aria-label="comfort A355"></button>
-                <button type="button" role="tab" aria-selected="false" data-hero-dot="1" aria-label="next A450"></button>
-                <button type="button" role="tab" aria-selected="false" data-hero-dot="2" aria-label="kanzlei A650"></button>
-              </div>
-              <button type="button" data-hero-next aria-label="Nächstes Modell">›</button>
+            <button class="hero-slider__arrow" type="button" data-hero-next aria-label="Nächstes Modell">›</button>
+            <div class="hero-slider__dots" role="tablist" aria-label="Modelle">
+              <button type="button" role="tab" aria-selected="true" data-hero-dot="0" aria-label="comfort A355"></button>
+              <button type="button" role="tab" aria-selected="false" data-hero-dot="1" aria-label="next A450"></button>
+              <button type="button" role="tab" aria-selected="false" data-hero-dot="2" aria-label="kanzlei A650"></button>
             </div>
           </div>
           <div class="hero-chips">
@@ -316,7 +314,7 @@
               <a class="btn btn-primary" href="bestellformular.html#scanner-a355">Bestellen</a>
             </article>
             <article class="model">
-              <div class="model-photo"><img src="media/homepage/products/scandinavier-a450.jpg" alt="SCANDINAVIER next"></div>
+              <div class="model-photo"><img src="media/homepage/products/scandinavier-a450.png" alt="SCANDINAVIER next"></div>
               <h3 class="model-name">next</h3>
               <p class="model-hw">A450 · Volumen</p>
               <ul class="specs">
@@ -331,7 +329,7 @@
               <a class="btn btn-ghost" href="bestellformular.html#scanner-a450">Bestellen</a>
             </article>
             <article class="model">
-              <div class="model-photo"><img src="media/homepage/products/scandinavier-a650.jpg" alt="SCANDINAVIER kanzlei"></div>
+              <div class="model-photo"><img src="media/homepage/products/scandinavier-a650.png" alt="SCANDINAVIER kanzlei"></div>
               <h3 class="model-name">kanzlei</h3>
               <p class="model-hw">A650 · A4 und A3</p>
               <ul class="specs">
@@ -372,6 +370,46 @@
               </ul>
               <a class="btn btn-ghost" href="bestellformular.html#scanner-a350">Bestellen</a>
             </article>
+          </div>
+        </div>
+
+        <div class="size-compare">
+          <p class="eyebrow">Abmessungen</p>
+          <h3>Im Maßstab. Nicht alle gleich groß.</h3>
+          <p class="muted">classic und comfort teilen dasselbe Gehäuse. next ist tiefer und höher. kanzlei ist das A3-Gerät – sichtbar größer.</p>
+          <div class="size-stage">
+            <figure class="size-unit" style="--w:318; --h:189;">
+              <div class="size-frame">
+                <img src="media/homepage/products/scanner-transparent.png" alt="SCANDINAVIER classic">
+                <span class="dim dim-h"><i></i><b>189 mm</b></span>
+              </div>
+              <span class="dim dim-w"><i></i><b>318 mm</b></span>
+              <figcaption><strong>classic</strong><span>318 × 170 × 189 mm</span></figcaption>
+            </figure>
+            <figure class="size-unit" style="--w:318; --h:189;">
+              <div class="size-frame">
+                <img src="media/a355/a355-hero.png" alt="SCANDINAVIER comfort">
+                <span class="dim dim-h"><i></i><b>189 mm</b></span>
+              </div>
+              <span class="dim dim-w"><i></i><b>318 mm</b></span>
+              <figcaption><strong>comfort</strong><span>318 × 170 × 189 mm</span></figcaption>
+            </figure>
+            <figure class="size-unit" style="--w:320; --h:237;">
+              <div class="size-frame">
+                <img src="media/homepage/products/scandinavier-a450.png" alt="SCANDINAVIER next">
+                <span class="dim dim-h"><i></i><b>237 mm</b></span>
+              </div>
+              <span class="dim dim-w"><i></i><b>320 mm</b></span>
+              <figcaption><strong>next</strong><span>320 × 298 × 237 mm</span></figcaption>
+            </figure>
+            <figure class="size-unit" style="--w:405; --h:297;">
+              <div class="size-frame">
+                <img src="media/homepage/products/scandinavier-a650.png" alt="SCANDINAVIER kanzlei">
+                <span class="dim dim-h"><i></i><b>297 mm</b></span>
+              </div>
+              <span class="dim dim-w"><i></i><b>405 mm</b></span>
+              <figcaption><strong>kanzlei</strong><span>405 × 272 × 297 mm</span></figcaption>
+            </figure>
           </div>
         </div>
       </div>

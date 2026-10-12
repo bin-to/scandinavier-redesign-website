@@ -22,12 +22,12 @@
     a650: {
       title: "SCANDINAVIER kanzlei",
       price: 169900,
-      image: "media/order/a650-product.jpg",
+      image: "media/order/a650-product.png",
     },
     a450: {
       title: "SCANDINAVIER next",
       price: 119900,
-      image: "media/order/a450-product.jpg",
+      image: "media/order/a450-product.png",
     },
     a280: {
       title: "SCANDINAVIER classic",
