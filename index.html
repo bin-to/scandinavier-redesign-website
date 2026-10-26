@@ -43,8 +43,10 @@
         <div class="hero-visual">
           <div class="hero-slider" data-hero-slider>
             <div class="hero-slider__stage">
-              <button class="hero-slider__arrow" type="button" data-hero-prev aria-label="Vorheriges Modell">‹</button>
-              <div class="hero-slider__track">
+              <div class="hero-slider__track" data-hero-swipe>
+                <button class="hero-slider__arrow" type="button" data-hero-prev aria-label="Vorheriges Modell">
+                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
                 <figure class="hero-slide is-active" style="--hero-scale: 0.64">
                   <img src="media/a355/a355-hero.png" alt="SCANDINAVIER comfort, A355 Pro">
                   <figcaption>comfort · A355</figcaption>
@@ -57,8 +59,10 @@
                   <img src="media/homepage/products/scandinavier-a650.png" alt="SCANDINAVIER kanzlei, A650">
                   <figcaption>kanzlei · A650</figcaption>
                 </figure>
+                <button class="hero-slider__arrow" type="button" data-hero-next aria-label="Nächstes Modell">
+                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
               </div>
-              <button class="hero-slider__arrow" type="button" data-hero-next aria-label="Nächstes Modell">›</button>
             </div>
             <div class="hero-slider__dots" role="tablist" aria-label="Modelle">
               <button type="button" role="tab" aria-selected="true" data-hero-dot="0" aria-label="comfort A355"></button>

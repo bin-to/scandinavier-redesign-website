@@ -149,20 +149,58 @@
       timer = window.setInterval(() => show(index + 1), 5000);
     };
 
-    heroSlider.querySelector("[data-hero-prev]")?.addEventListener("click", () => {
-      show(index - 1);
+    const go = (next) => {
+      show(next);
       start();
+    };
+
+    heroSlider.querySelector("[data-hero-prev]")?.addEventListener("click", () => {
+      go(index - 1);
     });
     heroSlider.querySelector("[data-hero-next]")?.addEventListener("click", () => {
-      show(index + 1);
-      start();
+      go(index + 1);
     });
     dots.forEach((dot) => {
       dot.addEventListener("click", () => {
-        show(Number(dot.dataset.heroDot));
-        start();
+        go(Number(dot.dataset.heroDot));
       });
     });
+
+    const swipeSurface = heroSlider.querySelector("[data-hero-swipe]");
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    swipeSurface?.addEventListener(
+      "touchstart",
+      (event) => {
+        if (event.touches.length !== 1) return;
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+        stop();
+      },
+      { passive: true }
+    );
+
+    swipeSurface?.addEventListener(
+      "touchend",
+      (event) => {
+        const touch = event.changedTouches[0];
+        if (!touch) {
+          start();
+          return;
+        }
+        const deltaX = touch.clientX - touchStartX;
+        const deltaY = touch.clientY - touchStartY;
+        const minSwipe = 48;
+        if (Math.abs(deltaX) < minSwipe || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) {
+          start();
+          return;
+        }
+        go(deltaX > 0 ? index - 1 : index + 1);
+      },
+      { passive: true }
+    );
+
     heroSlider.addEventListener("mouseenter", stop);
     heroSlider.addEventListener("mouseleave", start);
     heroSlider.addEventListener("focusin", stop);
