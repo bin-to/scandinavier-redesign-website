@@ -10,19 +10,29 @@
     header?.classList.toggle("is-scrolled", window.scrollY > 8);
   });
 
-  toggle?.addEventListener("click", () => {
-    const open = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+  let menuScrollY = 0;
+
+  const setMenuOpen = (open) => {
+    nav?.classList.toggle("is-open", open);
+    toggle?.setAttribute("aria-expanded", String(open));
+    toggle?.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
     document.body.classList.toggle("nav-open", open);
+    if (open) {
+      menuScrollY = window.scrollY;
+      document.body.style.top = `-${menuScrollY}px`;
+      return;
+    }
+    document.body.style.top = "";
+    window.scrollTo(0, menuScrollY);
+  };
+
+  toggle?.addEventListener("click", () => {
+    setMenuOpen(!nav?.classList.contains("is-open"));
   });
 
   nav?.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      toggle?.setAttribute("aria-expanded", "false");
-      toggle?.setAttribute("aria-label", "Menü öffnen");
-      document.body.classList.remove("nav-open");
+      setMenuOpen(false);
     });
   });
 
@@ -64,14 +74,47 @@
     });
   });
 
+  const modalVideo = document.querySelector(".modal video");
+
   function closeModal() {
     modal?.classList.remove("is-open");
-    if (modalFrame) modalFrame.src = "";
+    if (modalFrame) {
+      modalFrame.src = "";
+      modalFrame.hidden = true;
+    }
+    if (modalVideo) {
+      modalVideo.pause();
+      modalVideo.removeAttribute("src");
+      modalVideo.load();
+      modalVideo.hidden = true;
+    }
   }
 
-  document.querySelectorAll("[data-video]").forEach((btn) => {
+  document.querySelectorAll("[data-video], [data-video-file]").forEach((btn) => {
     btn.addEventListener("click", () => {
+      if (!modal) return;
+      const file = btn.dataset.videoFile;
+      if (file && modalVideo) {
+        if (modalFrame) modalFrame.hidden = true;
+        modal.classList.add("is-open");
+        modalVideo.hidden = false;
+        modalVideo.poster = btn.dataset.videoPoster || "";
+        const start = () => {
+          modalVideo.play().catch(() => {});
+        };
+        modalVideo.addEventListener("loadeddata", start, { once: true });
+        if (modalVideo.getAttribute("src") !== file) {
+          modalVideo.src = file;
+          modalVideo.load();
+        } else if (modalVideo.readyState >= 2) {
+          start();
+        }
+        return;
+      }
       const id = btn.dataset.video;
+      if (!id || !modalFrame) return;
+      if (modalVideo) modalVideo.hidden = true;
+      modalFrame.hidden = false;
       modalFrame.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
       modal.classList.add("is-open");
     });

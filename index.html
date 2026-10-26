@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="media/homepage/logos/scandinavier-wordmark.png">
+  <link rel="icon" href="media/homepage/logos/scandinavier-mark.png">
 </head>
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt springen</a>
@@ -42,22 +42,24 @@
         </div>
         <div class="hero-visual">
           <div class="hero-slider" data-hero-slider>
-            <button class="hero-slider__arrow" type="button" data-hero-prev aria-label="Vorheriges Modell">‹</button>
             <div class="hero-slider__stage">
-              <figure class="hero-slide is-active" style="--hero-scale: 0.64">
-                <img src="media/a355/a355-hero.png" alt="SCANDINAVIER comfort, A355 Pro">
-                <figcaption>comfort · A355</figcaption>
-              </figure>
-              <figure class="hero-slide" style="--hero-scale: 0.8" hidden>
-                <img src="media/homepage/products/scandinavier-a450.png" alt="SCANDINAVIER next, A450">
-                <figcaption>next · A450</figcaption>
-              </figure>
-              <figure class="hero-slide" style="--hero-scale: 1" hidden>
-                <img src="media/homepage/products/scandinavier-a650.png" alt="SCANDINAVIER kanzlei, A650">
-                <figcaption>kanzlei · A650</figcaption>
-              </figure>
+              <button class="hero-slider__arrow" type="button" data-hero-prev aria-label="Vorheriges Modell">‹</button>
+              <div class="hero-slider__track">
+                <figure class="hero-slide is-active" style="--hero-scale: 0.64">
+                  <img src="media/a355/a355-hero.png" alt="SCANDINAVIER comfort, A355 Pro">
+                  <figcaption>comfort · A355</figcaption>
+                </figure>
+                <figure class="hero-slide" style="--hero-scale: 0.8" hidden>
+                  <img src="media/homepage/products/scandinavier-a450.png" alt="SCANDINAVIER next, A450">
+                  <figcaption>next · A450</figcaption>
+                </figure>
+                <figure class="hero-slide" style="--hero-scale: 1" hidden>
+                  <img src="media/homepage/products/scandinavier-a650.png" alt="SCANDINAVIER kanzlei, A650">
+                  <figcaption>kanzlei · A650</figcaption>
+                </figure>
+              </div>
+              <button class="hero-slider__arrow" type="button" data-hero-next aria-label="Nächstes Modell">›</button>
             </div>
-            <button class="hero-slider__arrow" type="button" data-hero-next aria-label="Nächstes Modell">›</button>
             <div class="hero-slider__dots" role="tablist" aria-label="Modelle">
               <button type="button" role="tab" aria-selected="true" data-hero-dot="0" aria-label="comfort A355"></button>
               <button type="button" role="tab" aria-selected="false" data-hero-dot="1" aria-label="next A450"></button>
@@ -239,13 +241,13 @@
             <img src="media/homepage/features/datev-meine-steuern.png" alt="">
             <h3>DATEV Meine Steuern</h3>
             <p>Dokumente und Belege bequem nach Meine Steuern übertragen. SmartLogin am Gerät, Synchronisation der Bestände, dann scannen.</p>
-            <a href="https://www.scandinavier.de/supports/datev-meine-steuern" target="_blank" rel="noreferrer">Zur Anleitung</a>
+            <a href="anleitung.html?a=datev-meine-steuern">Zur Anleitung</a>
           </article>
           <article class="datev-card">
             <img src="media/homepage/features/datev-personalakte.jpg" alt="">
             <h3>Digitale Personalakte</h3>
             <p>Arbeitsverträge, Krankmeldungen, Urlaubsanträge: personalbezogene Unterlagen sicher an die DATEV Digitale Personalakte übermitteln.</p>
-            <a href="https://www.scandinavier.de/supports/datev-personalakte-einrichten" target="_blank" rel="noreferrer">Zur Anleitung</a>
+            <a href="anleitung.html?a=datev-personal-einrichten">Zur Anleitung</a>
           </article>
         </div>
         <div class="scan-targets">
@@ -275,8 +277,8 @@
           </article>
         </div>
         <div class="feature-video">
-          <img src="media/homepage/products/a650-header.png" alt="">
-          <button type="button" data-video="ErBXLCMKZSY">
+          <img src="media/videos/funktionen-poster.jpg" alt="">
+          <button type="button" data-video-file="media/videos/scandinavier-funktionen.mp4" data-video-poster="media/videos/funktionen-poster.jpg">
             <span class="play">▶</span>
             Die wichtigsten Funktionen im Überblick
           </button>
@@ -292,7 +294,7 @@
             <h2>Drei Modelle.<br>Eine Idee.</h2>
             <p>Unterschiede liegen in Tempo, Einzug, Volumen und Format – nicht in der DATEV-Logik. Die bleibt auf jedem SCANDINAVIER gleich.</p>
           </div>
-          <a class="link-quiet" href="https://www.scandinavier.de/supports/demogerat" target="_blank" rel="noreferrer">Livedemo</a>
+          <a class="link-quiet" href="anleitung.html?a=demogerat">Livedemo</a>
         </div>
         <div class="models">
           <div class="models-row models-row--current">
@@ -458,7 +460,7 @@
             </article>
             <article class="video-card">
               <img src="media/homepage/people/andreas-hausmann.png" alt="Andreas Hausmann testet den SCANDINAVIER">
-              <button type="button" data-video="MK-3tmApKno">
+              <button type="button" data-video="x5xpWeAQVME">
                 <span class="play">▶</span>
                 Unverbindlich getestet von Andreas Hausmann
               </button>
@@ -571,7 +573,10 @@
 
   <div class="modal" role="dialog" aria-modal="true" aria-label="Video">
     <button class="modal-close" type="button" aria-label="Schließen">×</button>
-    <div class="modal-inner"><iframe title="SCANDINAVIER Video" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+    <div class="modal-inner">
+      <iframe title="SCANDINAVIER Video" allow="autoplay; encrypted-media" allowfullscreen hidden></iframe>
+      <video controls playsinline preload="auto" hidden></video>
+    </div>
   </div>
 
   <script src="js/site-chrome.js"></script>
