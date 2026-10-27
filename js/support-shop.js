@@ -300,58 +300,6 @@
 
 
 
-  const filters = document.querySelectorAll(".guide-filter");
-
-  const guideLinks = document.querySelectorAll(".guide-link");
-
-  const guideSearch = document.querySelector("#guide-search");
-
-
-
-  filters.forEach((filter) => {
-
-    filter.addEventListener("click", () => {
-
-      filters.forEach((f) => {
-        f.classList.remove("is-active");
-        f.setAttribute("aria-selected", "false");
-      });
-
-      filter.classList.add("is-active");
-      filter.setAttribute("aria-selected", "true");
-
-      const cat = filter.dataset.filter;
-
-      guideLinks.forEach((link) => {
-
-        const match = cat === "all" || link.dataset.category === cat;
-
-        link.classList.toggle("is-hidden", !match);
-
-      });
-
-    });
-
-  });
-
-
-
-  guideSearch?.addEventListener("input", () => {
-
-    const q = guideSearch.value.trim().toLowerCase();
-
-    guideLinks.forEach((link) => {
-
-      const text = link.querySelector(".guide-link-title")?.textContent.toLowerCase() ?? link.textContent.toLowerCase();
-
-      link.classList.toggle("is-hidden", q.length > 1 && !text.includes(q));
-
-    });
-
-  });
-
-
-
   renderCart();
 
 })();

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Anleitung – SCANDINAVIER</title>
+  <meta name="description" content="Kurzanleitung für den SCANDINAVIER Scanner – Schritt für Schritt mit Screenshots.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/support.css">
+  <link rel="stylesheet" href="css/guide.css">
+  <link rel="icon" href="media/homepage/logos/scandinavier-mark.png">
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+  <scandi-site-header
+    active="support"
+    cta-ghost-href="support.html#anleitungen"
+    cta-ghost-label="Alle Anleitungen"
+    cta-primary-href="bestellformular.html"
+    cta-primary-label="Scanner bestellen"
+  ></scandi-site-header>
+
+  <main id="inhalt">
+    <article id="guide-article" class="guide-article"></article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="brand">
+            <img class="brand-logo" src="media/homepage/logos/scandinavier-wordmark.png" alt="SCANDINAVIER">
+          </div>
+          <p>Der DATEV-Scanner ohne PC. Eine Entwicklung der <a href="https://www.kuhnit.de/loesungen-leistungen/scandinavier">KUHN IT GmbH</a>.</p>
+          <div class="social">
+            <a href="https://www.facebook.com/pg/KuhnIT/posts/" target="_blank" rel="noreferrer" aria-label="Facebook"><img src="media/homepage/icons/facebook.svg" alt=""></a>
+            <a href="mailto:info@kuhnit.de?subject=Anleitung%20SCANDINAVIER" aria-label="E-Mail"><img src="media/homepage/icons/email.svg" alt=""></a>
+          </div>
+        </div>
+        <div>
+          <strong style="color:#fff;">Produkt</strong>
+          <p>
+            <a href="index.html#modelle">Modelle</a><br>
+            <a href="index.html#datev">DATEV</a><br>
+            <a href="einrichtung.html">Einrichtung</a><br>
+            <a href="index.html#faq">FAQs</a>
+          </p>
+        </div>
+        <div>
+          <strong style="color:#fff;">Mehr</strong>
+          <p>
+            <a href="support.html">Support &amp; Ersatzteile</a><br>
+            <a href="kontakt.html">Kontakt</a><br>
+            <a href="https://www.scandinavier.de/scandinavier-on-tour">Live erleben</a><br>
+            <a href="https://www.scanmachine.de/">SCAN MACHINE</a>
+          </p>
+        </div>
+        <div>
+          <strong style="color:#fff;">KUHN IT GmbH</strong>
+          <p>Schwabäcker 36, 73642 Welzheim<br>
+          <a href="impressum.html">Impressum</a> ·
+          <a href="datenschutz.html">Datenschutz</a> ·
+          <a href="agb.html">AGB</a></p>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 KUHN IT GmbH</span>
+        <span>Kurzanleitungen</span>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="guide-lightbox">
+    <button class="guide-lightbox-close" type="button" aria-label="Schließen">×</button>
+    <img alt="">
+  </dialog>
+
+  <script src="js/site-chrome.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/guides/inbetriebnahme.js"></script>
+  <script src="js/guides/handhabung.js"></script>
+  <script src="js/guides/wartung.js"></script>
+  <script src="js/guides/scanner-schnittstellen.js"></script>
+  <script src="js/guide-page.js"></script>
+  <script>
+    document.querySelector(".guide-lightbox-close")?.addEventListener("click", () => {
+      document.querySelector(".guide-lightbox")?.close();
+    });
+  </script>
+</body>
+</html>

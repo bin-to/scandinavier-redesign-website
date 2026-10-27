@@ -163,7 +163,7 @@
 }
 
 .hero-slide img {
-  height: calc(var(--hero-scale, 1) * 300px);
+  height: 300px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -1347,7 +1347,7 @@
 
   .hero-slide img {
     height: auto;
-    max-height: calc((0.78 + var(--hero-scale, 1) * 0.22) * 248px);
+    max-height: 248px;
     max-width: calc(100% - 16px);
     filter: drop-shadow(0 12px 16px rgba(26, 28, 27, 0.14));
   }
