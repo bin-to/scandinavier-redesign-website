@@ -78,6 +78,9 @@
       });
     });
 
+    // Reveal on entry, not when 12% of the element is visible. A ratio
+    // threshold can never fire once the target is taller than the viewport
+    // divided by that ratio, so the full guide list stayed at opacity: 0.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -86,7 +89,7 @@
           observer.unobserve(entry.target);
         });
       },
-      { rootMargin: "0px 0px -6% 0px", threshold: 0.12 }
+      { rootMargin: "0px 0px -6% 0px", threshold: 0 }
     );
 
     document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));

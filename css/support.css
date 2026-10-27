@@ -159,7 +159,10 @@
 .guide-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
+  /* auto, not 1fr. A fractional row track needs the grid's own height, and
+     that height is the sum of the rows. WebKit never resolves the cycle and
+     the Anleitungen block grows without a bound. */
+  grid-auto-rows: auto;
   align-items: stretch;
   gap: 12px;
 }
@@ -170,7 +173,9 @@
   align-items: stretch;
   justify-content: space-between;
   gap: 16px;
-  height: 100%;
+  /* Stretch equalizes cards in a row. height: 100% sizes the card from the
+     row that the card itself is stretching, which is the other half of the
+     WebKit runaway. */
   min-height: 7.5rem;
   padding: 16px 18px 16px 20px;
   background: var(--snow);
