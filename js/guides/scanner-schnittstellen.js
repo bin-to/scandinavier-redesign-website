@@ -430,14 +430,14 @@ window.SCANDI_GUIDES.push(
   {
     "id": "update-scandinavier-software",
     "category": "scanner",
-    "title": "Sie haben bereits einen A350 oder A280",
-    "tagline": "Sie besitzen bereits einen A350 oder A280 Scanner?",
+    "title": "Sie haben bereits einen A355, A450 oder A650",
+    "tagline": "Sie besitzen bereits einen A355, A450 oder A650 Scanner?",
     "blocks": [
       {
         "type": "h2",
         "segments": [
           {
-            "text": "Upgrade A280 und A350 Scanner"
+            "text": "Upgrade A355, A450 und A650 Scanner"
           }
         ]
       },
