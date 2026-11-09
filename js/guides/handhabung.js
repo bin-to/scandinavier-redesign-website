@@ -128,7 +128,7 @@ window.SCANDI_GUIDES.push(
         "type": "p",
         "segments": [
           {
-            "text": "Das Scanergebnis wird Ihnen in der Vorschau angezeigt. Jedes Bild stellt beim Siplex-Scanvorgang eine Datei dar. Das Bild zeigt drei einzelne Dateien (Belege)."
+            "text": "Das Scanergebnis wird Ihnen in der Vorschau angezeigt. Jedes Bild stellt beim Siplex-Scanvorgang eine Datei dar. Das Bild zeigt acht einzelne Dateien (Belege)."
           }
         ]
       },
@@ -210,7 +210,7 @@ window.SCANDI_GUIDES.push(
         "type": "p",
         "segments": [
           {
-            "text": "Das folgende Bild zeigt die farbliche Kennzeichnung pro Datei. Hier sieht man mit orange markiert eine Datei bestehend aus zwei Seiten und eine blau markierte Datei bestehend aus einer Seite."
+            "text": "Das folgende Bild zeigt die farbliche Kennzeichnung pro Datei. Hier sieht man mit orange markiert eine Datei bestehend aus einer Seite und eine blau markierte Datei bestehend aus zwei Seiten usw."
           }
         ]
       },

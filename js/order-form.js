@@ -11,8 +11,8 @@
   const SCANNERS = {
     a355: {
       title: "SCANDINAVIER comfort (A355 Pro)",
-      price: 99500,
-      image: "media/a355/a355-hero.png",
+      price: 99900,
+      image: "media/a355/a355-image.png",
     },
     a350: {
       title: "SCANDINAVIER comfort (A350)",
@@ -22,7 +22,7 @@
     a650: {
       title: "SCANDINAVIER kanzlei",
       price: 169900,
-      image: "media/order/a650-product.png",
+      image: "media/homepage/products/scandinavier-a650.png",
     },
     a450: {
       title: "SCANDINAVIER next",
@@ -61,6 +61,9 @@
   const remoteRadios = form.querySelectorAll('input[name="fernwartung"]');
   const premiumOption = document.querySelector("#premium-option");
   const premiumHint = document.querySelector("#premium-hint");
+  const premiumPrice = document.querySelector("#premium-price");
+  const premiumJaLabel = document.querySelector("#premium-ja-label");
+  let premiumChoiceBeforeLock = null;
   const garantieBtn = document.querySelector(".info-tip");
   const garantiePanel = document.querySelector("#garantie-info");
 
@@ -131,20 +134,37 @@
   function syncPremium() {
     const kanzlei = getQty("a650") > 0;
     const locked = onlyKanzlei();
+    const ja = [...premiumRadios].find((radio) => radio.value === "ja");
+    const nein = [...premiumRadios].find((radio) => radio.value === "nein");
+
     premiumOption?.classList.toggle("is-included", locked);
+
+    if (locked) {
+      if (premiumChoiceBeforeLock === null) {
+        premiumChoiceBeforeLock = [...premiumRadios].find((radio) => radio.checked)?.value || "nein";
+      }
+      if (ja) ja.checked = true;
+    } else if (premiumChoiceBeforeLock !== null) {
+      const restore = state.size > 0 ? premiumChoiceBeforeLock : "nein";
+      premiumChoiceBeforeLock = null;
+      const target = [...premiumRadios].find((radio) => radio.value === restore);
+      if (target) target.checked = true;
+    }
+
     premiumRadios.forEach((radio) => {
       radio.disabled = locked;
-      if (locked && radio.value === "nein") radio.checked = true;
     });
-    if (!premiumHint) return;
-    if (!kanzlei) {
-      premiumHint.hidden = true;
-      return;
+    if (premiumJaLabel) premiumJaLabel.textContent = locked ? "Inklusive" : "Ja";
+    if (premiumPrice) {
+      premiumPrice.textContent = locked
+        ? "Beim SCANDINAVIER kanzlei inklusive"
+        : "175,00 € · 4 Jahre";
     }
-    premiumHint.hidden = false;
-    premiumHint.textContent = locked
-      ? "Beim SCANDINAVIER kanzlei bereits inklusive."
-      : "Beim kanzlei bereits inklusive. Die Option gilt für die weiteren Geräte.";
+    if (ja) ja.setAttribute("aria-checked", String(ja.checked));
+    if (nein) nein.setAttribute("aria-checked", String(nein.checked));
+
+    if (!premiumHint) return;
+    premiumHint.hidden = locked || !kanzlei;
   }
 
   function computeTotal() {
