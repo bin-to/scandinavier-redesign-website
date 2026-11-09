@@ -38,7 +38,6 @@
 
   const PRICES = {
     personalakte: 9900,
-    software: 9900,
     cable: 500,
     premium: 17500,
     remote: 3750,
@@ -57,9 +56,7 @@
   });
 
   const personalakteChecks = form.querySelectorAll("[data-personalakte]");
-  const softwareChecks = form.querySelectorAll("[data-software]");
   const premiumRadios = form.querySelectorAll('input[name="premium-plus"]');
-  const softwareLaterRadios = form.querySelectorAll('input[name="software-nachtraeglich"]');
   const cableRadios = form.querySelectorAll('input[name="netzwerkkabel"]');
   const remoteRadios = form.querySelectorAll('input[name="fernwartung"]');
   const premiumOption = document.querySelector("#premium-option");
@@ -112,7 +109,7 @@
     const lines = [];
     checks.forEach((box) => {
       if (!box.checked) return;
-      const id = box.dataset.personalakte || box.dataset.software;
+      const id = box.dataset.personalakte;
       const qty = getQty(id);
       if (qty <= 0) return;
       const lineSum = price * qty;
@@ -163,23 +160,11 @@
       lineItems.push({ id, qty, product, lineSum });
     });
 
-    addonLines(softwareChecks, PRICES.software, "Software").forEach((line) => {
-      total += line.lineSum;
-      extras.push(line);
-    });
     addonLines(personalakteChecks, PRICES.personalakte, "DATEV Personalakte").forEach((line) => {
       total += line.lineSum;
       extras.push(line);
     });
 
-    if (radioYes(softwareLaterRadios)) {
-      total += PRICES.software;
-      extras.push({
-        title: "Software nachträglich",
-        qty: 1,
-        lineSum: PRICES.software,
-      });
-    }
     if (radioYes(cableRadios)) total += PRICES.cable;
     if (radioYes(premiumRadios) && !onlyKanzlei()) total += PRICES.premium;
     if (radioYes(remoteRadios)) total += PRICES.remote;
@@ -259,7 +244,7 @@
     }
   });
 
-  [...personalakteChecks, ...softwareChecks, ...premiumRadios, ...softwareLaterRadios, ...cableRadios, ...remoteRadios].forEach(
+  [...personalakteChecks, ...premiumRadios, ...cableRadios, ...remoteRadios].forEach(
     (el) => el.addEventListener("change", render),
   );
 
@@ -286,8 +271,8 @@
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if (state.size === 0 && !radioYes(softwareLaterRadios)) {
-      window.alert("Bitte wählen Sie mindestens einen Scanner oder die Software nachträglich.");
+    if (state.size === 0) {
+      window.alert("Bitte wählen Sie mindestens einen Scanner (Menge größer 0).");
       document.querySelector(".scanner-grid")?.scrollIntoView({ behavior: "smooth" });
       return;
     }
