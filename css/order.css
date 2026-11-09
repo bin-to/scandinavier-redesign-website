@@ -1081,11 +1081,34 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 14px 0;
-  margin-bottom: 14px;
+  padding: 14px 0 12px;
+  margin-bottom: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.65);
+}
+
+.order-cart .form-legal-hint {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.order-cart .form-legal-hint a,
+.order-cart .form-legal-hint__link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font: inherit;
+  line-height: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  vertical-align: baseline;
+  cursor: pointer;
 }
 
 .order-cart__total strong {
