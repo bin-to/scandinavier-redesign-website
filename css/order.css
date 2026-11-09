@@ -774,87 +774,226 @@
 /* —— Formular —— */
 .order-address-blocks {
   display: grid;
-  gap: 14px;
+  gap: 16px;
 }
 
-.form-block {
+.order-form .form-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 24px 26px;
+  padding: 26px 28px 28px;
+  box-shadow: 0 1px 2px rgba(26, 28, 27, 0.04);
 }
 
-.form-block-head {
-  margin-bottom: 16px;
-  padding-bottom: 12px;
+.order-form .form-block-head {
+  margin: 0;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
 }
 
-.form-block-head h3 {
+.order-form .form-block-head h3 {
   margin: 0 0 4px;
   font-family: var(--serif);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 
-.form-block-head p {
+.order-form .form-block-head p {
   margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+.order-form .form-row {
+  gap: 16px;
+}
+
+.order-form .field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.order-form .field label {
+  margin: 0;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.order-form input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+.order-form textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 15px;
+  border: 1px solid rgba(26, 28, 27, 0.14);
+  border-radius: 10px;
+  background: #f7f6f3;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.4;
+  box-shadow: inset 0 1px 1px rgba(26, 28, 27, 0.04);
+  transition:
+    border-color 0.15s var(--ease),
+    box-shadow 0.15s var(--ease),
+    background 0.15s var(--ease);
+}
+
+.order-form textarea {
+  min-height: 128px;
+  padding-top: 14px;
+  resize: vertical;
+}
+
+.order-form input::placeholder,
+.order-form textarea::placeholder {
+  color: #9aa09d;
+}
+
+.order-form input:hover:not(:focus):not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+.order-form textarea:hover:not(:focus) {
+  border-color: rgba(26, 28, 27, 0.28);
+  background: #fff;
+}
+
+.order-form input:focus-visible:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+.order-form textarea:focus-visible {
+  outline: none;
+  border-color: var(--teal);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(3, 154, 154, 0.14);
+}
+
+.order-form input:user-invalid:not([type="checkbox"]):not([type="radio"]),
+.order-form textarea:user-invalid {
+  border-color: #c4493a;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(196, 73, 58, 0.1);
+}
+
+.order-form #lieferadresse-block:not([hidden]) {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-form .check {
+  margin: 0;
+  padding: 14px 16px;
+  background: #f7f6f3;
+  border: 1px solid rgba(26, 28, 27, 0.1);
+  border-radius: 12px;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  transition: border-color 0.15s var(--ease), background 0.15s var(--ease);
+}
+
+.order-form .check:hover {
+  border-color: rgba(26, 28, 27, 0.22);
+  background: #fff;
+}
+
+.order-form .check:has(input:focus-visible) {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(3, 154, 154, 0.14);
+}
+
+.order-form .check:has(input:checked) {
+  border-color: color-mix(in srgb, var(--teal) 42%, transparent);
+  background: #f3fafa;
+}
+
+.order-form .check a {
+  color: var(--teal-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.order-form .check input {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  margin-top: 2px;
+  accent-color: var(--teal);
+}
+
+.order-confirm {
+  display: grid;
+  gap: 10px;
+  margin-top: 2px;
 }
 
 .order-neukunde-hint {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin: 10px 0 0;
-  padding: 10px 12px;
-  background: var(--snow);
-  border-radius: var(--radius);
-  line-height: 1.45;
-}
-
-.order-demo-link {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 16px;
-  padding: 12px 14px;
-  background: var(--snow);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  font-size: 0.85rem;
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.order-demo-link:hover {
-  border-color: var(--teal);
-  color: var(--teal-deep);
-}
-
-.order-demo-link img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-}
-
-.bundle-radios {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 20px;
-}
-
-.bundle-radios label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  font-size: 0.84rem;
+  color: var(--ink-2);
   margin: 0;
-  font-size: 0.88rem;
-  cursor: pointer;
+  padding: 12px 14px;
+  background: #f7f6f3;
+  border: 1px solid rgba(26, 28, 27, 0.08);
+  border-radius: 12px;
+  line-height: 1.5;
 }
 
-.bundle-radios input {
-  width: auto;
-  min-height: auto;
+.order-form .bundle-radios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.order-form .bundle-radios label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(26, 28, 27, 0.12);
+  border-radius: 12px;
+  background: #f7f6f3;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: border-color 0.15s var(--ease), background 0.15s var(--ease), color 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+
+.order-form .bundle-radios label:hover {
+  border-color: rgba(26, 28, 27, 0.24);
+  background: #fff;
+}
+
+.order-form .bundle-radios label:has(input:checked) {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  color: var(--teal-deep);
+  box-shadow: 0 0 0 3px rgba(3, 154, 154, 0.12);
+}
+
+.order-form .bundle-radios label:has(input:focus-visible) {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.order-form .bundle-radios input {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  margin: 0;
+  accent-color: var(--teal);
+}
+
+@media (min-width: 721px) {
+  .order-form .form-row--zip {
+    grid-template-columns: minmax(0, 168px) minmax(0, 1fr);
+  }
 }
 
 /* —— Warenkorb (Sidebar) —— */
@@ -1086,8 +1225,12 @@
   }
 
   .order-panel,
-  .form-block {
+  .order-form .form-block {
     padding: 18px 16px;
+  }
+
+  .order-form .bundle-radios {
+    grid-template-columns: 1fr;
   }
 
   .bundle-options,

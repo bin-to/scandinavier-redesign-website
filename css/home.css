@@ -644,20 +644,6 @@
   max-height: 110px;
 }
 
-.link-quiet {
-  align-self: end;
-  margin-bottom: 6px;
-  color: var(--muted);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.link-quiet:hover {
-  color: var(--teal-deep);
-}
-
 .model {
   background: var(--white);
   border: 1px solid var(--line);

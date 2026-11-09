@@ -336,39 +336,43 @@
                   <h3>Rechnungsadresse</h3>
                 </div>
                 <div class="form-row">
-                  <div>
+                  <div class="field">
                     <label for="rechnung-firma">Firma / Kanzlei *</label>
                     <input id="rechnung-firma" name="firma" required autocomplete="organization">
                   </div>
-                  <div>
+                  <div class="field">
                     <label for="rechnung-name">Name *</label>
                     <input id="rechnung-name" name="name" required autocomplete="name">
                   </div>
                 </div>
-                <label for="rechnung-strasse">Straße und Hausnummer *</label>
-                <input id="rechnung-strasse" name="strasse" required autocomplete="street-address">
-                <div class="form-row">
-                  <div>
+                <div class="field">
+                  <label for="rechnung-strasse">Straße und Hausnummer *</label>
+                  <input id="rechnung-strasse" name="strasse" required autocomplete="street-address">
+                </div>
+                <div class="form-row form-row--zip">
+                  <div class="field">
                     <label for="rechnung-plz">Postleitzahl *</label>
-                    <input id="rechnung-plz" name="plz" required autocomplete="postal-code">
+                    <input id="rechnung-plz" name="plz" required autocomplete="postal-code" inputmode="numeric">
                   </div>
-                  <div>
+                  <div class="field">
                     <label for="rechnung-ort">Ort *</label>
                     <input id="rechnung-ort" name="ort" required autocomplete="address-level2">
                   </div>
                 </div>
                 <div class="form-row">
-                  <div>
+                  <div class="field">
                     <label for="rechnung-email">E-Mail *</label>
                     <input id="rechnung-email" name="email" type="email" required autocomplete="email">
                   </div>
-                  <div>
+                  <div class="field">
                     <label for="rechnung-telefon">Telefon *</label>
                     <input id="rechnung-telefon" name="telefon" type="tel" required autocomplete="tel">
                   </div>
                 </div>
-                <label for="rechnung-ustid">Umsatzsteuer-ID</label>
-                <input id="rechnung-ustid" name="ustid" autocomplete="off">
+                <div class="field">
+                  <label for="rechnung-ustid">Umsatzsteuer-ID</label>
+                  <input id="rechnung-ustid" name="ustid" autocomplete="off" placeholder="DE123456789">
+                </div>
               </section>
 
               <section class="form-block">
@@ -381,33 +385,35 @@
                 </label>
                 <div id="lieferadresse-block" hidden>
                   <div class="form-row">
-                    <div>
+                    <div class="field">
                       <label for="liefer-firma">Firma / Kanzlei *</label>
                       <input id="liefer-firma" name="firma-liefer" data-liefer-required="true" autocomplete="organization">
                     </div>
-                    <div>
+                    <div class="field">
                       <label for="liefer-name">Name *</label>
                       <input id="liefer-name" name="name-liefer" data-liefer-required="true" autocomplete="name">
                     </div>
                   </div>
-                  <label for="liefer-strasse">Straße und Hausnummer *</label>
-                  <input id="liefer-strasse" name="strasse-liefer" data-liefer-required="true" autocomplete="street-address">
-                  <div class="form-row">
-                    <div>
+                  <div class="field">
+                    <label for="liefer-strasse">Straße und Hausnummer *</label>
+                    <input id="liefer-strasse" name="strasse-liefer" data-liefer-required="true" autocomplete="street-address">
+                  </div>
+                  <div class="form-row form-row--zip">
+                    <div class="field">
                       <label for="liefer-plz">Postleitzahl *</label>
-                      <input id="liefer-plz" name="plz-liefer" data-liefer-required="true" autocomplete="postal-code">
+                      <input id="liefer-plz" name="plz-liefer" data-liefer-required="true" autocomplete="postal-code" inputmode="numeric">
                     </div>
-                    <div>
+                    <div class="field">
                       <label for="liefer-ort">Ort *</label>
                       <input id="liefer-ort" name="ort-liefer" data-liefer-required="true" autocomplete="address-level2">
                     </div>
                   </div>
                   <div class="form-row">
-                    <div>
+                    <div class="field">
                       <label for="liefer-email">E-Mail</label>
                       <input id="liefer-email" name="email-liefer" type="email" autocomplete="email">
                     </div>
-                    <div>
+                    <div class="field">
                       <label for="liefer-telefon">Telefon</label>
                       <input id="liefer-telefon" name="telefon-liefer" type="tel" autocomplete="tel">
                     </div>
@@ -420,14 +426,16 @@
                   <h3>Angaben zu Ihrem Steuerberater</h3>
                   <p>Für die Einrichtung und DATEV-Anbindung.</p>
                 </div>
-                <label for="steuerberater-kanzlei">Name der Kanzlei des Steuerberaters</label>
-                <input id="steuerberater-kanzlei" name="steuerberater-kanzlei">
+                <div class="field">
+                  <label for="steuerberater-kanzlei">Name der Kanzlei des Steuerberaters</label>
+                  <input id="steuerberater-kanzlei" name="steuerberater-kanzlei">
+                </div>
                 <div class="form-row">
-                  <div>
+                  <div class="field">
                     <label for="unterberaternummer">Unterberaternummer</label>
                     <input id="unterberaternummer" name="unterberaternummer">
                   </div>
-                  <div>
+                  <div class="field">
                     <label for="empfohlen-von">Empfohlen von</label>
                     <input id="empfohlen-von" name="empfohlen-von">
                   </div>
@@ -446,43 +454,44 @@
               </section>
 
               <section class="form-block">
-                <label for="anmerkungen">Anmerkungen zur Bestellung</label>
-                <textarea id="anmerkungen" name="anmerkungen" placeholder="Wunschtermin, Ansprechpartner, Sonderwünsche …"></textarea>
+                <div class="form-block-head">
+                  <h3>Abschluss</h3>
+                  <p>Anmerkungen, Ansprechpartner und Bestätigung.</p>
+                </div>
+                <div class="field">
+                  <label for="anmerkungen">Anmerkungen zur Bestellung</label>
+                  <textarea id="anmerkungen" name="anmerkungen" placeholder="Wunschtermin, Ansprechpartner, Sonderwünsche …"></textarea>
+                </div>
 
                 <label class="check">
                   <input type="checkbox" id="ansprechpartner-mail" name="ansprechpartner-benachrichtigung">
                   <span>Ansprechpartner soll eine Bestätigung der Bestellung per E-Mail erhalten.</span>
                 </label>
                 <div class="form-row">
-                  <div>
+                  <div class="field">
                     <label for="email-ansprechpartner">E-Mail Ansprechpartner</label>
-                    <input id="email-ansprechpartner" name="email-ansprechpartner" type="email">
+                    <input id="email-ansprechpartner" name="email-ansprechpartner" type="email" autocomplete="email">
                   </div>
-                  <div>
+                  <div class="field">
                     <label for="name-ansprechpartner">Name Ansprechpartner</label>
-                    <input id="name-ansprechpartner" name="name-ansprechpartner">
+                    <input id="name-ansprechpartner" name="name-ansprechpartner" autocomplete="name">
                   </div>
                 </div>
-                <div class="form-row">
-                  <div>
-                    <label for="telefon-ansprechpartner">Telefon Ansprechpartner</label>
-                    <input id="telefon-ansprechpartner" name="telefon-ansprechpartner" type="tel">
-                  </div>
+                <div class="field">
+                  <label for="telefon-ansprechpartner">Telefon Ansprechpartner</label>
+                  <input id="telefon-ansprechpartner" name="telefon-ansprechpartner" type="tel" autocomplete="tel">
                 </div>
 
-                <label class="check">
-                  <input type="checkbox" id="agb-akzeptiert" name="agb" required>
-                  <span>* Hiermit bestelle ich verbindlich. Ich habe die <a href="agb.html">AGB</a> gelesen und bin mit deren Geltung einverstanden.</span>
-                </label>
-                <label class="check">
-                  <input type="checkbox" data-consent required>
-                  <span>Ich willige ein, dass die KUHN IT GmbH meine Angaben zur Bearbeitung dieser Bestellung verwendet.</span>
-                </label>
-
-                <a class="order-demo-link" href="anleitung.html?a=demogerat">
-                  <img src="media/order/demo-info.png" alt="">
-                  <span>Warum liefern wir keine DEMO-Geräte aus?</span>
-                </a>
+                <div class="order-confirm">
+                  <label class="check">
+                    <input type="checkbox" id="agb-akzeptiert" name="agb" required>
+                    <span>* Hiermit bestelle ich verbindlich. Ich habe die <a href="agb.html">AGB</a> gelesen und bin mit deren Geltung einverstanden.</span>
+                  </label>
+                  <label class="check">
+                    <input type="checkbox" data-consent required>
+                    <span>Ich willige ein, dass die KUHN IT GmbH meine Angaben zur Bearbeitung dieser Bestellung verwendet.</span>
+                  </label>
+                </div>
               </section>
             </div>
             </div>
@@ -496,7 +505,8 @@
                 <span>Zwischensumme</span>
                 <strong id="order-live-total">0,00 €</strong>
               </div>
-              <button class="btn btn-light order-cart__submit" type="submit">Bestellung absenden</button>
+              <p class="form-legal-hint">Beim Absenden: Google reCAPTCHA bei aktivem <button type="button" class="form-legal-hint__link" data-cookie-settings>Formularschutz</button>. <a href="datenschutz.html#abschnitt-16">Datenschutz</a>.</p>
+            <button class="btn btn-light order-cart__submit" type="submit">Bestellung absenden</button>
             </aside>
           </div>
 
@@ -570,6 +580,7 @@
   <script src="js/page-hero.js"></script>
   <script src="js/motion.js"></script>
   <script src="js/ui.js"></script>
+  <script src="js/form-api.js"></script>
   <script src="js/order-form.js"></script>
 </body>
 </html>
